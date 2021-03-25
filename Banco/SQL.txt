@@ -1,0 +1,38 @@
+CREATE TABLE usuario(
+	id SERIAL NOT NULL,
+	nome VARCHAR(100) NOT NULL,
+	login VARCHAR(30) NOT NULL,
+	senha VARCHAR(20) NOT NULL,
+	x VARCHAR(1),
+	PRIMARY KEY (id));
+
+
+CREATE TABLE categoria(
+	id SERIAL NOT NULL,
+	nome VARCHAR(100) NOT NULL,
+	descricao VARCHAR(300),
+	x VARCHAR(1),
+	PRIMARY KEY (id));
+
+
+CREATE TABLE pessoa(
+	id SERIAL NOT NULL,
+	nome VARCHAR(100) NOT NULL,
+	cpf VARCHAR(14),
+	x VARCHAR(1),
+	PRIMARY KEY (id));
+
+
+CREATE TABLE movimento(
+	id SERIAL NOT NULL,
+	data DATE,
+	tipo VARCHAR(50) NOT NULL,
+	categoria VARCHAR(100) NOT NULL,
+	valor DECIMAL (10,2) NOT NULL,
+	descricao VARCHAR(300),
+	x VARCHAR(1),
+	categoria_id INT NOT NULL,
+	pessoa_id INT NOT NULL,
+	PRIMARY KEY (id),
+	CONSTRAINT fk_movimento_categoria FOREIGN KEY (categoria_id) REFERENCES categoria(id),
+	CONSTRAINT fk_movimento_pessoa FOREIGN KEY (pessoa_id) REFERENCES pessoa(id));
