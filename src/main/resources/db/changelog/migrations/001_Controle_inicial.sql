@@ -18,7 +18,7 @@ CREATE TABLE IF NOT EXISTS categoria (
 	nome VARCHAR(100) NOT NULL,
 	descricao VARCHAR(300),
 	x VARCHAR(1),
-	PRIMARY KEY (id)
+	PRIMARY KEY (id_categoria)
 );
 --rollback DROP TABLE categoria;
 
@@ -29,7 +29,7 @@ CREATE TABLE IF NOT EXISTS pessoa (
 	nome VARCHAR(100) NOT NULL,
 	cpf VARCHAR(14),
 	x VARCHAR(1),
-	PRIMARY KEY (id)
+	PRIMARY KEY (id_pessoa)
 );
 --rollback DROP TABLE pessoa;
 
@@ -45,8 +45,8 @@ CREATE TABLE IF NOT EXISTS movimento (
 	x VARCHAR(1),
 	categoria_id INT NOT NULL,
 	pessoa_id INT NOT NULL,
-	PRIMARY KEY (id),
-	CONSTRAINT fk_movimento_categoria FOREIGN KEY (categoria_id) REFERENCES categoria(id),
-	CONSTRAINT fk_movimento_pessoa FOREIGN KEY (pessoa_id) REFERENCES pessoa(id)
+	PRIMARY KEY (id_movimento),
+	CONSTRAINT fk_movimento_categoria FOREIGN KEY (categoria_id) REFERENCES categoria(id_categoria),
+	CONSTRAINT fk_movimento_pessoa FOREIGN KEY (pessoa_id) REFERENCES pessoa(id_pessoa)
 );
 --rollback DROP TABLE movimento;

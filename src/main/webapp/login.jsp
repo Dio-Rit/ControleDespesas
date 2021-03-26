@@ -59,13 +59,12 @@
                 <img class="mb-4" src="img/logo.png" alt="" width="150">
                 
                 <h2>Controle de Despesas</h2>
-                
+                <br>
                 <label for="inputText" class="visually-hidden">Email address</label>
                 <input type="text" id="inputEmail" class="form-control" placeholder="Login" required autofocus>
-              
                 <label for="inputPassword" class="visually-hidden">Password</label>
                 <input type="password" id="inputPassword" class="form-control" placeholder="Senha" required>
-
+                <br>
                 <button class="w-100 btn btn-lg btn-dark" type="submit">Acessar</button>
                 
             </form>

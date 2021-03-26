@@ -11,18 +11,18 @@ package Entidade;
  */
 public class Usuario {
 
-    private int id;
+    private int id_usuario;
     private String nome;
     private String login;
     private String senha;
     private String x;
 
     public int getId() {
-        return id;
+        return id_usuario;
     }
 
     public void setId(int id) {
-        this.id = id;
+        this.id_usuario = id;
     }
 
     public String getNome() {

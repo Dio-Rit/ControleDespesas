@@ -6,6 +6,27 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
+
+        <style>
+            .bd-placeholder-img {
+                font-size: 1.125rem;
+                text-anchor: middle;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                user-select: none;
+            }
+
+            @media (min-width: 768px) {
+                .bd-placeholder-img-lg {
+                    font-size: 3.5rem;
+                }
+            }
+        </style>
+
+        <!-- Bootstrap core CSS -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+
+        <link href="css/navbar.css" rel="stylesheet">
     </head>
     <body>
         <nav class="navbar navbar-expand-md navbar-dark bg-dark" aria-label="Fourth navbar example">
@@ -19,49 +40,21 @@
                     <ul class="navbar-nav me-auto mb-2 mb-md-0">
 
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-bs-toggle="dropdown" aria-expanded="false">Usuários</a>
-                            <ul class="dropdown-menu" aria-labelledby="dropdown04">
-                                <li><a class="dropdown-item" href="CadastroUsuario.jsp">Cadastro Usuário</a></li>
-                                <li><a class="dropdown-item" href="ListarUsuarios.jsp">Listar Usuários</a></li>
-                                <li><a class="dropdown-item" href="EditarUsuarios.jsp">Editar Usuários</a></li>
-                                <li><a class="dropdown-item" href="ExcluirUsuarios.jsp">Excluir Usuários</a></li>
-                            </ul>
-                        </li>
-
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-bs-toggle="dropdown" aria-expanded="false">Pessoas</a>
-                            <ul class="dropdown-menu" aria-labelledby="dropdown04">
-                                <li><a class="dropdown-item" href="CadastroPessoas.jsp">Cadastro Pessoas</a></li>
-                                <li><a class="dropdown-item" href="ListarPessoas.jsp">Listar Pessoas</a></li>
-                                <li><a class="dropdown-item" href="EditarPessoas.jsp">Editar Pessoas</a></li>
-                                <li><a class="dropdown-item" href="ExcluirPessoas.jsp">Excluir Pessoas</a></li>
-                            </ul>
-                        </li>
-
-                        <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-bs-toggle="dropdown" aria-expanded="false">Categorias</a>
                             <ul class="dropdown-menu" aria-labelledby="dropdown04">
-                                <li><a class="dropdown-item" href="CadastroCategorias.jsp">Cadastro Categorias</a></li>
-                                <li><a class="dropdown-item" href="ListarCategorias.jsp">Listar Categorias</a></li>
-                                <li><a class="dropdown-item" href="EditarCategorias.jsp">Editar Categorias</a></li>
-                                <li><a class="dropdown-item" href="ExcluirCategorias.jsp">Excluir Categorias</a></li>
+                                <li><a class="dropdown-item" href="DAOCategoria/CadastroCategorias.jsp">Cadastro Categorias</a></li>
+                                <li><a class="dropdown-item" href="DAOCategoria/ListarCategorias.jsp">Listar Categorias</a></li>
+                                <li><a class="dropdown-item" href="DAOCategoria/EditarCategorias.jsp">Editar Categorias</a></li>
+                                <li><a class="dropdown-item" href="DAOCategoria/ExcluirCategorias.jsp">Excluir Categorias</a></li>
                             </ul>
                         </li>
 
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-bs-toggle="dropdown" aria-expanded="false">Movimentos</a>
-                            <ul class="dropdown-menu" aria-labelledby="dropdown04">
-                                <li><a class="dropdown-item" href="CadastroMovimentos.jsp">Cadastro Movimentos</a></li>
-                                <li><a class="dropdown-item" href="ListarMovimentos.jsp">Listar Movimentos</a></li>
-                                <li><a class="dropdown-item" href="EditarMovimentos.jsp">Editar Movimentos</a></li>
-                                <li><a class="dropdown-item" href="ExcluirMovimentos.jsp">Excluir Movimentos</a></li>
-                            </ul>
-                        </li>
                     </ul>
                 </div>
             </div>
         </nav>
 
-        <h1>Hello World!</h1>
+        <script src="js/bootstrap.bundle.min.js"></script>
+
     </body>
 </html>
