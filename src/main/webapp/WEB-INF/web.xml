@@ -4,9 +4,17 @@
         <servlet-name>AcaoUsuario</servlet-name>
         <servlet-class>Servlet.AcaoUsuario</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>AcaoLogin</servlet-name>
+        <servlet-class>Servlet.AcaoLogin</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>AcaoUsuario</servlet-name>
         <url-pattern>/AcaoUsuario</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AcaoLogin</servlet-name>
+        <url-pattern>/AcaoLogin</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -1,0 +1,11 @@
+url: jdbc:postgresql://localhost:5432/ControleDespesas
+username: postgres
+password: postgres
+driver: org.postgresql.Driver
+
+databaseChangeLog:
+  - include:
+      file: migrations/001_Controle_inicial.sql
+      file: migrations/002_inserts.sql
+      relativeToChangelogFile: true
+
