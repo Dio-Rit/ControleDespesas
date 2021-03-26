@@ -1,8 +1,4 @@
-<%-- 
-    Document   : CadastroPessoas
-    Created on : 26 de mar de 2021, 16:41:59
-    Author     : yNot
---%>
+
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>

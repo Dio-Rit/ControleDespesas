@@ -1,8 +1,4 @@
-<%-- 
-    Document   : ExcluirPessoas
-    Created on : 26 de mar de 2021, 16:42:30
-    Author     : yNot
---%>
+
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>

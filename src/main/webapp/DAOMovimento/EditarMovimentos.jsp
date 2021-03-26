@@ -1,8 +1,4 @@
-<%-- 
-    Document   : EditarMovimentos
-    Created on : 26 de mar de 2021, 16:43:40
-    Author     : yNot
---%>
+
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
