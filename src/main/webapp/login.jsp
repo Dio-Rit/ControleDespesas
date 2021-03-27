@@ -56,7 +56,7 @@
 
         <main class="form-signin">
             <form method="post" action="/ControleDespesas/home.jsp">            
-                <img class="mb-4" src="img/logo.png" alt="" width="150">
+                <img class="mb-4" src="img/login.png" alt="" width="150">
                 
                 <h2>Controle de Despesas</h2>
                 <br>

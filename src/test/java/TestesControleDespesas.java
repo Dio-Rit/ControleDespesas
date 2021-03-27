@@ -15,9 +15,9 @@ import static org.junit.Assert.*;
  *
  * @author yNot
  */
-public class NewEmptyJUnitTest {
+public class TestesControleDespesas {
     
-    public NewEmptyJUnitTest() {
+    public TestesControleDespesas() {
     }
     
     @BeforeClass

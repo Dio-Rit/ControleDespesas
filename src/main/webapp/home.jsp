@@ -27,8 +27,11 @@
         <link href="css/bootstrap.min.css" rel="stylesheet">
 
         <link href="css/navbar.css" rel="stylesheet">
+        
+        <link href="css/BgHome.css" rel="stylesheet">
+        
     </head>
-    <body>
+    <body class="bg">
         <nav class="navbar navbar-expand-md navbar-dark bg-dark" aria-label="Fourth navbar example">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">Controle de Despesas</a>
@@ -38,7 +41,6 @@
 
                 <div class="collapse navbar-collapse" id="navbarsExample04">
                     <ul class="navbar-nav me-auto mb-2 mb-md-0">
-
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-bs-toggle="dropdown" aria-expanded="false">Usuários</a>
                             <ul class="dropdown-menu" aria-labelledby="dropdown04">
@@ -48,7 +50,6 @@
                                 <li><a class="dropdown-item" href="DAOUsuario/ExcluirUsuarios.jsp">Excluir Usuários</a></li>
                             </ul>
                         </li>
-
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-bs-toggle="dropdown" aria-expanded="false">Pessoas</a>
                             <ul class="dropdown-menu" aria-labelledby="dropdown04">
@@ -58,7 +59,6 @@
                                 <li><a class="dropdown-item" href="DAOPessoa/ExcluirPessoas.jsp">Excluir Pessoas</a></li>
                             </ul>
                         </li>
-
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-bs-toggle="dropdown" aria-expanded="false">Categorias</a>
                             <ul class="dropdown-menu" aria-labelledby="dropdown04">
@@ -68,7 +68,6 @@
                                 <li><a class="dropdown-item" href="DAOCategoria/ExcluirCategorias.jsp">Excluir Categorias</a></li>
                             </ul>
                         </li>
-
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-bs-toggle="dropdown" aria-expanded="false">Movimentos</a>
                             <ul class="dropdown-menu" aria-labelledby="dropdown04">
@@ -79,19 +78,19 @@
                             </ul>
                         </li>
                     </ul>
-
-                    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+                    <div class="float-end" id="navbarsExampleDefault">
                         <ul class="navbar-nav mr-auto">
                         </ul>
 
-                        <form include file="login.jsp">
+                        <form action="login.jsp">
                             <button type="submit" class="btn btn-dark">Sair</input>
                         </form>
+
                     </div>
                 </div>
             </div>
         </nav>
-
+        
         <script src="js/bootstrap.bundle.min.js"></script>
 
     </body>

@@ -24,9 +24,9 @@
         </style>
 
         <!-- Bootstrap core CSS -->
-        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
 
-        <link href="css/navbar.css" rel="stylesheet">
+        <link href="../css/navbar.css" rel="stylesheet">
     </head>
     <body>
         <nav class="navbar navbar-expand-md navbar-dark bg-dark" aria-label="Fourth navbar example">
@@ -43,18 +43,26 @@
                             <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-bs-toggle="dropdown" aria-expanded="false">Movimentos</a>
                             <ul class="dropdown-menu" aria-labelledby="dropdown04">
                                 <li><a class="dropdown-item" href="DAOMovimento/CadastroMovimentos.jsp">Cadastro Movimentos</a></li>
-                                <li><a class="dropdown-item" href="DAOMovimento/ListarMovimentos.jsp">Listar Movimentos</a></li>
                                 <li><a class="dropdown-item" href="DAOMovimento/EditarMovimentos.jsp">Editar Movimentos</a></li>
                                 <li><a class="dropdown-item" href="DAOMovimento/ExcluirMovimentos.jsp">Excluir Movimentos</a></li>
                             </ul>
                         </li>
 
                     </ul>
+                    <div class="float-end" id="navbarsExampleDefault">
+                        <ul class="navbar-nav mr-auto">
+                        </ul>
+
+                        <form action="../home.jsp">
+                            <button type="submit" class="btn btn-dark">Voltar</input>
+                        </form>
+
+                    </div>
                 </div>
             </div>
         </nav>
 
-        <script src="js/bootstrap.bundle.min.js"></script>
+        <script src="../js/bootstrap.bundle.min.js"></script>
 
     </body>
 </html>
