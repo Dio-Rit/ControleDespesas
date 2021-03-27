@@ -42,9 +42,9 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-bs-toggle="dropdown" aria-expanded="false">Pessoas</a>
                             <ul class="dropdown-menu" aria-labelledby="dropdown04">
-                                <li><a class="dropdown-item" href="DAOPessoa/CadastroPessoas.jsp">Cadastro Pessoas</a></li>
-                                <li><a class="dropdown-item" href="DAOPessoa/ListarPessoas.jsp">Listar Pessoas</a></li>
-                                <li><a class="dropdown-item" href="DAOPessoa/EditarPessoas.jsp">Editar Pessoas</a></li>
+                                <li><a class="dropdown-item" href="../DAOPessoa/CadastroPessoas.jsp">Cadastro Pessoas</a></li>
+                                <li><a class="dropdown-item" href="../DAOPessoa/ListarPessoas.jsp">Listar Pessoas</a></li>
+                                <li><a class="dropdown-item" href="../DAOPessoa/EditarPessoas.jsp">Editar Pessoas</a></li>
                             </ul>
                         </li>
 

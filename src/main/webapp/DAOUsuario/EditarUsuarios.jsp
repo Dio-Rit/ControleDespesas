@@ -42,9 +42,9 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-bs-toggle="dropdown" aria-expanded="false">Usuários</a>
                             <ul class="dropdown-menu" aria-labelledby="dropdown04">
-                                <li><a class="dropdown-item" href="CadastroUsuario.jsp">Cadastro Usuário</a></li>
-                                <li><a class="dropdown-item" href="ListarUsuarios.jsp">Listar Usuários</a></li>
-                                <li><a class="dropdown-item" href="ExcluirUsuarios.jsp">Excluir Usuários</a></li>
+                                <li><a class="dropdown-item" href="../DAOUsuario/CadastroUsuario.jsp">Cadastro Usuário</a></li>
+                                <li><a class="dropdown-item" href="../DAOUsuario/ListarUsuarios.jsp">Listar Usuários</a></li>
+                                <li><a class="dropdown-item" href="../DAOUsuario/ExcluirUsuarios.jsp">Excluir Usuários</a></li>
                             </ul>
                         </li>
 

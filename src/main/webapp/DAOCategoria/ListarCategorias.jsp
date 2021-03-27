@@ -42,9 +42,9 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-bs-toggle="dropdown" aria-expanded="false">Categorias</a>
                             <ul class="dropdown-menu" aria-labelledby="dropdown04">
-                                <li><a class="dropdown-item" href="DAOCategoria/CadastroCategorias.jsp">Cadastro Categorias</a></li>
-                                <li><a class="dropdown-item" href="DAOCategoria/EditarCategorias.jsp">Editar Categorias</a></li>
-                                <li><a class="dropdown-item" href="DAOCategoria/ExcluirCategorias.jsp">Excluir Categorias</a></li>
+                                <li><a class="dropdown-item" href="../DAOCategoria/CadastroCategorias.jsp">Cadastro Categorias</a></li>
+                                <li><a class="dropdown-item" href="../DAOCategoria/EditarCategorias.jsp">Editar Categorias</a></li>
+                                <li><a class="dropdown-item" href="../DAOCategoria/ExcluirCategorias.jsp">Excluir Categorias</a></li>
                             </ul>
                         </li>
 

@@ -105,18 +105,14 @@
                     </execution>
                 </executions>
             </plugin>
+            
             <plugin>
                 <groupId>org.liquibase</groupId>
                 <artifactId>liquibase-maven-plugin</artifactId>
-                
-                
-                <configuration>                                                            
-                    <changeLogFile>db.changelogs/db.changelog-master.yaml</changeLogFile>   
-                    <driver>org.postgresql.Driver</driver>                                 
-                    <url>jdbc:postgresql://localhost:5432/ControleDespesas</url>                            
-                    <username>postgres</username>                                              
-                    <password>postgres</password>                                              
-                </configuration>                                                           
+                <configuration>
+                    <propertyFile>src/main/resources/db/changelog/db.changelog-master.yaml</propertyFile>
+                    <changeLogFile>src/main/resources/db/changelog/db.changelog-master.yaml</changeLogFile>
+                </configuration>                                                          
                 <executions>                                                               
                     <execution>                                                            
                         <goals>                                                            

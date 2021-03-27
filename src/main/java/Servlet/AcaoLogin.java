@@ -5,6 +5,7 @@
  */
 package Servlet;
 
+import DAO.UsuarioDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -35,7 +36,7 @@ public class AcaoLogin extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet AcaoLogin</title>");            
+            out.println("<title>Servlet AcaoLogin</title>");
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Servlet AcaoLogin at " + request.getContextPath() + "</h1>");
@@ -56,7 +57,7 @@ public class AcaoLogin extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        //processRequest(request, response);
     }
 
     /**
@@ -70,7 +71,23 @@ public class AcaoLogin extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        //processRequest(request, response);
+
+        String param = request.getParameter("param");
+
+        String Login = request.getParameter("nome");
+        String Senha = request.getParameter("senha");
+
+        if (param.equals("Logar")) {
+
+            UsuarioDAO c = new UsuarioDAO();
+            
+            if (c.logar(Login, Senha)) {
+                response.sendRedirect("home.jsp");
+            }else{
+                response.sendRedirect("login.jsp");
+            }
+        }
     }
 
     /**

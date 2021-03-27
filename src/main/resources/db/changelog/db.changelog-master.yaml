@@ -6,6 +6,8 @@ driver: org.postgresql.Driver
 databaseChangeLog:
   - include:
       file: migrations/001_Controle_inicial.sql
+      relativeToChangelogFile: true
+  - include:
       file: migrations/002_inserts.sql
       relativeToChangelogFile: true
 

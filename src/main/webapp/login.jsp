@@ -55,15 +55,19 @@
     <body class="text-center">
 
         <main class="form-signin">
-            <form method="post" action="/ControleDespesas/home.jsp">            
+            <form method="post" action="AcaoLogin?param=Logar"> 
+                
                 <img class="mb-4" src="img/login.png" alt="" width="150">
                 
                 <h2>Controle de Despesas</h2>
                 <br>
-                <label for="inputText" class="visually-hidden">Email address</label>
-                <input type="text" id="inputEmail" class="form-control" placeholder="Login" required autofocus>
-                <label for="inputPassword" class="visually-hidden">Password</label>
-                <input type="password" id="inputPassword" class="form-control" placeholder="Senha" required>
+                
+                <label for="nome" class="visually-hidden">Email address</label>
+                <input type="text" id="inputEmail" name="nome" class="form-control" placeholder="Login">
+                
+                <label for="senha" class="visually-hidden">Password</label>
+                <input type="password" id="inputPassword" name="senha" class="form-control" placeholder="Senha">
+                
                 <br>
                 <button class="w-100 btn btn-lg btn-dark" type="submit">Acessar</button>
                 
