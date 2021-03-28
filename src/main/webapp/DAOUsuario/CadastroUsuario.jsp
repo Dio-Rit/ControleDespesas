@@ -62,17 +62,17 @@
                 <center>
                     <div class="form-group col-md-3">
                         <label for="Nome">Nome</label>
-                        <input type="text" class="form-control" id="Nome" name="Nome" aria-describedby="Nome" placeholder="Digite seu nome">
+                        <input type="text" class="form-control" id="Nome" name="Nome" aria-describedby="Nome" placeholder="Digite seu nome" required="">
                     </div>
 
                     <div class="form-group col-md-3">
                         <label for="Login">Login</label>
-                        <input type="text" class="form-control" id="Login" name="Login" aria-describedby="Login" placeholder="Digite seu login">
+                        <input type="text" class="form-control" id="Login" name="Login" aria-describedby="Login" placeholder="Digite seu login" required="">
                     </div>
 
                     <div class="form-group col-md-3">
                         <label for="Senha">Senha</label>
-                        <input type="password" class="form-control" id="Senha" name="Senha" placeholder="Digite sua senha">
+                        <input type="password" class="form-control" id="Senha" name="Senha" placeholder="Digite sua senha" required="">
                     </div>
                     <br>
                     <button type="submit" class="btn btn-dark">Cadastrar</button>

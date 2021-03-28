@@ -96,23 +96,17 @@ public class AcaoUsuario extends HttpServlet {
         // processRequest(request, response);
 
         String param = request.getParameter("param");
-        System.out.println(request);
         String Nome = request.getParameter("Nome");
         String Login = request.getParameter("Login");
         String Senha = request.getParameter("Senha");
 
-        System.out.println(Nome);
-
         if (param.equals("SalvarUsuario")) {
-
-            System.out.println(Login);
 
             Usuario u = new Usuario();
             u.setNome(Nome);
             u.setLogin(Login);
             u.setSenha(Senha);
             u.setX("A");
-            System.out.println(Senha);
 
             UsuarioDAO c = new UsuarioDAO();
             c.salvar(u);

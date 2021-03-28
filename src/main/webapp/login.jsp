@@ -63,10 +63,10 @@
                 <br>
                 
                 <label for="nome" class="visually-hidden">Email address</label>
-                <input type="text" id="inputEmail" name="nome" class="form-control" placeholder="Login">
+                <input type="text" id="inputEmail" name="nome" class="form-control" placeholder="Login" required="">
                 
                 <label for="senha" class="visually-hidden">Password</label>
-                <input type="password" id="inputPassword" name="senha" class="form-control" placeholder="Senha">
+                <input type="password" id="inputPassword" name="senha" class="form-control" placeholder="Senha" required="">
                 
                 <br>
                 <button class="w-100 btn btn-lg btn-dark" type="submit">Acessar</button>

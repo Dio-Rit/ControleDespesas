@@ -55,12 +55,12 @@
                 <center>
                     <div class="form-group col-md-3">
                         <label for="Nome">Nome</label>
-                        <input type="text" class="form-control" id="Nome" name="Nome" aria-describedby="Nome" placeholder="Digite o nome da categoria">
+                        <input type="text" class="form-control" id="Nome" name="Nome" aria-describedby="Nome" placeholder="Digite o nome da categoria" required="">
                     </div>
 
                     <div class="form-group col-md-3">
                         <label for="Descricao">Descrição</label>
-                        <input type="text" class="form-control" id="Login" name="Descricao" aria-describedby="Descricao" placeholder="Digite uma descrição">
+                        <input type="text" class="form-control" id="Login" name="Descricao" aria-describedby="Descricao" placeholder="Digite uma descrição" required="">
                     </div>
                     <br>
                     <button type="submit" class="btn btn-dark">Cadastrar</button>

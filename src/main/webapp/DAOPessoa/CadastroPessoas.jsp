@@ -55,12 +55,12 @@
                 <center>
                     <div class="form-group col-md-3">
                         <label for="Nome">Nome</label>
-                        <input type="text" class="form-control" id="Nome" name="Nome" aria-describedby="Nome" placeholder="Digite seu nome">
+                        <input type="text" class="form-control" id="Nome" name="Nome" aria-describedby="Nome" placeholder="Digite seu nome" required="">
                     </div>
 
                     <div class="form-group col-md-3">
                         <label for="CPF">CPF</label>
-                        <input type="text" class="form-control" id="CPF" name="CPF" aria-describedby="CPF" placeholder="Digite seu CPF">
+                        <input type="text" class="form-control" id="CPF" name="CPF" aria-describedby="CPF" placeholder="Digite seu CPF" required="">
                     </div>
                     <br>
                     <button type="submit" class="btn btn-dark">Cadastrar</button>

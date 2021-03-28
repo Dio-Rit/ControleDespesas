@@ -5,6 +5,8 @@
  */
 package Servlet;
 
+import DAO.PessoaDAO;
+import Entidade.Pessoa;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -35,7 +37,7 @@ public class AcaoPessoa extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet AcaoPessoa</title>");            
+            out.println("<title>Servlet AcaoPessoa</title>");
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Servlet AcaoPessoa at " + request.getContextPath() + "</h1>");
@@ -70,7 +72,23 @@ public class AcaoPessoa extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        // processRequest(request, response);
+
+        String param = request.getParameter("param");
+        String Nome = request.getParameter("Nome");
+        String CPF = request.getParameter("CPF");
+
+        if (param.equals("SalvarPessoa")) {
+
+            Pessoa u = new Pessoa();
+            u.setNome(Nome);
+            u.setCpf(CPF);
+            u.setX("A");
+
+            PessoaDAO c = new PessoaDAO();
+            c.salvar(u);
+            response.sendRedirect("../DAOPessoa/ListarPessoas.jsp");
+        }
     }
 
     /**

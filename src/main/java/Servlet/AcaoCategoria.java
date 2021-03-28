@@ -5,6 +5,8 @@
  */
 package Servlet;
 
+import DAO.CategoriaDAO;
+import Entidade.Categoria;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -35,7 +37,7 @@ public class AcaoCategoria extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet AcaoCategoria</title>");            
+            out.println("<title>Servlet AcaoCategoria</title>");
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Servlet AcaoCategoria at " + request.getContextPath() + "</h1>");
@@ -70,7 +72,23 @@ public class AcaoCategoria extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        //processRequest(request, response);
+
+        String param = request.getParameter("param");
+        String Nome = request.getParameter("Nome");
+        String Descricao = request.getParameter("Descricao");
+
+        if (param.equals("SalvarCategoria")) {
+
+            Categoria u = new Categoria();
+            u.setNome(Nome);
+            u.setDescricao(Descricao);
+            u.setX("A");
+
+            CategoriaDAO c = new CategoriaDAO();
+            c.salvar(u);
+            response.sendRedirect("../DAOCategoria/ListarCategorias.jsp");
+        }
     }
 
     /**
