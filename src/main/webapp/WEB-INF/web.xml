@@ -8,6 +8,18 @@
         <servlet-name>AcaoLogin</servlet-name>
         <servlet-class>Servlet.AcaoLogin</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>AcaoCategoria</servlet-name>
+        <servlet-class>Servlet.AcaoCategoria</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AcaoMovimento</servlet-name>
+        <servlet-class>Servlet.AcaoMovimento</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AcaoPessoa</servlet-name>
+        <servlet-class>Servlet.AcaoPessoa</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>AcaoUsuario</servlet-name>
         <url-pattern>/AcaoUsuario</url-pattern>
@@ -15,6 +27,18 @@
     <servlet-mapping>
         <servlet-name>AcaoLogin</servlet-name>
         <url-pattern>/AcaoLogin</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AcaoCategoria</servlet-name>
+        <url-pattern>/AcaoCategoria</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AcaoMovimento</servlet-name>
+        <url-pattern>/AcaoMovimento</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AcaoPessoa</servlet-name>
+        <url-pattern>/AcaoPessoa</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

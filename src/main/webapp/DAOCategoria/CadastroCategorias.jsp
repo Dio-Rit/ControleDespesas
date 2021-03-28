@@ -37,21 +37,11 @@
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarsExample04">
-                    <ul class="navbar-nav me-auto mb-2 mb-md-0">
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-bs-toggle="dropdown" aria-expanded="false">Categorias</a>
-                            <ul class="dropdown-menu" aria-labelledby="dropdown04">
-                                <li><a class="dropdown-item" href="../DAOCategoria/ListarCategorias.jsp">Listar Categorias</a></li>
-                                <li><a class="dropdown-item" href="../DAOCategoria/EditarCategorias.jsp">Editar Categorias</a></li>
-                                <li><a class="dropdown-item" href="../DAOCategoria/ExcluirCategorias.jsp">Excluir Categorias</a></li>
-                            </ul>
-                        </li>
-                    </ul>
                     <div class="float-end" id="navbarsExampleDefault">
                         <ul class="navbar-nav mr-auto">
                         </ul>
 
-                        <form action="../home.jsp">
+                        <form action="../DAOCategoria/ListarCategorias.jsp">
                             <button type="submit" class="btn btn-dark">Voltar</input>
                         </form>
 
@@ -60,7 +50,25 @@
             </div>
         </nav>
 
-        <script src="../js/bootstrap.bundle.min.js"></script>
+        <div id="CadastroCategoria">
+            <form name="AcaoCategoria" id="Acaocategoria" method="post" action="../AcaoCategoria?param=SalvarCategoria">
+                <center>
+                    <div class="form-group col-md-3">
+                        <label for="Nome">Nome</label>
+                        <input type="text" class="form-control" id="Nome" name="Nome" aria-describedby="Nome" placeholder="Digite o nome da categoria">
+                    </div>
 
+                    <div class="form-group col-md-3">
+                        <label for="Descricao">Descrição</label>
+                        <input type="text" class="form-control" id="Login" name="Descricao" aria-describedby="Descricao" placeholder="Digite uma descrição">
+                    </div>
+                    <br>
+                    <button type="submit" class="btn btn-dark">Cadastrar</button>
+                </center>
+            </form>
+        </div>
+
+        <script src="../js/bootstrap.bundle.min.js"></script>
+        
     </body>
 </html>

@@ -37,23 +37,11 @@
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarsExample04">
-                    <ul class="navbar-nav me-auto mb-2 mb-md-0">
-
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-bs-toggle="dropdown" aria-expanded="false">Pessoas</a>
-                            <ul class="dropdown-menu" aria-labelledby="dropdown04">
-                                <li><a class="dropdown-item" href="../DAOPessoa/ListarPessoas.jsp">Listar Pessoas</a></li>
-                                <li><a class="dropdown-item" href="../DAOPessoa/EditarPessoas.jsp">Editar Pessoas</a></li>
-                                <li><a class="dropdown-item" href="../DAOPessoa/ExcluirPessoas.jsp">Excluir Pessoas</a></li>
-                            </ul>
-                        </li>
-
-                    </ul>
                     <div class="float-end" id="navbarsExampleDefault">
                         <ul class="navbar-nav mr-auto">
                         </ul>
 
-                        <form action="../home.jsp">
+                        <form action="../DAOPessoa/ListarPessoas.jsp">
                             <button type="submit" class="btn btn-dark">Voltar</input>
                         </form>
 
@@ -61,23 +49,24 @@
                 </div>
             </div>
         </nav>
-        <h1> fsdfdfsdff </h1>
-        <form>
-            <div class="form-group">
-                <label for="exampleInputEmail1">Endereço de email</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Seu email">
-                <small id="emailHelp" class="form-text text-muted">Nunca vamos compartilhar seu email, com ninguém.</small>
-            </div>
-            <div class="form-group">
-                <label for="exampleInputPassword1">Senha</label>
-                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Senha">
-            </div>
-            <div class="form-group form-check">
-                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                <label class="form-check-label" for="exampleCheck1">Clique em mim</label>
-            </div>
-            <button type="submit" class="btn btn-primary">Enviar</button>
-        </form>
+        
+        <div id="CadastroUsuario">
+            <form name="AcaoPessoa" id="AcaoPessoa" method="post" action="../AcaoPessoa?param=SalvarPessoa">
+                <center>
+                    <div class="form-group col-md-3">
+                        <label for="Nome">Nome</label>
+                        <input type="text" class="form-control" id="Nome" name="Nome" aria-describedby="Nome" placeholder="Digite seu nome">
+                    </div>
+
+                    <div class="form-group col-md-3">
+                        <label for="CPF">CPF</label>
+                        <input type="text" class="form-control" id="CPF" name="CPF" aria-describedby="CPF" placeholder="Digite seu CPF">
+                    </div>
+                    <br>
+                    <button type="submit" class="btn btn-dark">Cadastrar</button>
+                </center>
+            </form>
+        </div>
 
         <script src="../js/bootstrap.bundle.min.js"></script>
 

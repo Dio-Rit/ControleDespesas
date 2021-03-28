@@ -37,21 +37,7 @@
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarsExample04">
-                    <ul class="navbar-nav me-auto mb-2 mb-md-0">
-
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-bs-toggle="dropdown" aria-expanded="false">Usuários</a>
-                            <ul class="dropdown-menu" aria-labelledby="dropdown04">
-                                <li><a class="dropdown-item" href="../DAOUsuario/CadastroUsuario.jsp">Cadastro Usuário</a></li>
-                                <li><a class="dropdown-item" href="../DAOUsuario/EditarUsuarios.jsp">Editar Usuários</a></li>
-                                <li><a class="dropdown-item" href="../DAOUsuario/ExcluirUsuarios.jsp">Excluir Usuários</a></li>
-                            </ul>
-                        </li>
-
-                    </ul>
                     <div class="float-end" id="navbarsExampleDefault">
-                        <ul class="navbar-nav mr-auto">
-                        </ul>
 
                         <form action="../home.jsp">
                             <button type="submit" class="btn btn-dark">Voltar</input>
@@ -61,6 +47,55 @@
                 </div>
             </div>
         </nav>
+
+        <div class="container-fluid">
+            <div class="row">
+                <main class="col-sm-12 ml-sm-auto col-md-12 " role="main">
+                    <div>
+                        <section layout:fragment="content">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-sm-10">Lista de Usuários</div>
+                                    <div class="col-sm-1">
+                                        <a href="../DAOUsuario/CadastroUsuario.jsp" class="btn btn-dark active" role="button"
+                                           aria-pressed="true"><i class="fas fa-plus"></i>Adicionar</a>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <br>
+                                </div>
+                                <div class="row">
+                                    <table class="table table-striped ">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">#</th>
+                                                <th scope="col">Nome</th>
+                                                <th scope="col">Login</th>
+                                                <th scope="col"></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr data-th-each="c : {usuario}">
+                                                <td data-th-text="{c.}"></td>
+                                                <td data-th-text="${c.descricao}"></td>
+                                                <td>
+                                                    <a th:href="@{/money/categorias/edit/{id}(id=${c.id_categoria})}"   class="btn btn-success" title="Editar">
+                                                        <i class="fas fa-edit"></i>
+                                                    </a>
+                                                    <a th:href="@{/money/categorias/delete/{id}(id=${c.id_categoria})}" class="btn btn-danger" title="Excluir">
+                                                        <i class="fas fa-trash"></i>
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </main>
+            </div>
+        </div>
 
         <script src="../js/bootstrap.bundle.min.js"></script>
 

@@ -44,37 +44,25 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-bs-toggle="dropdown" aria-expanded="false">Usuários</a>
                             <ul class="dropdown-menu" aria-labelledby="dropdown04">
-                                <li><a class="dropdown-item" href="DAOUsuario/CadastroUsuario.jsp">Cadastro Usuário</a></li>
                                 <li><a class="dropdown-item" href="DAOUsuario/ListarUsuarios.jsp">Listar Usuários</a></li>
-                                <li><a class="dropdown-item" href="DAOUsuario/EditarUsuarios.jsp">Editar Usuários</a></li>
-                                <li><a class="dropdown-item" href="DAOUsuario/ExcluirUsuarios.jsp">Excluir Usuários</a></li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-bs-toggle="dropdown" aria-expanded="false">Pessoas</a>
                             <ul class="dropdown-menu" aria-labelledby="dropdown04">
-                                <li><a class="dropdown-item" href="DAOPessoa/CadastroPessoas.jsp">Cadastro Pessoas</a></li>
                                 <li><a class="dropdown-item" href="DAOPessoa/ListarPessoas.jsp">Listar Pessoas</a></li>
-                                <li><a class="dropdown-item" href="DAOPessoa/EditarPessoas.jsp">Editar Pessoas</a></li>
-                                <li><a class="dropdown-item" href="DAOPessoa/ExcluirPessoas.jsp">Excluir Pessoas</a></li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-bs-toggle="dropdown" aria-expanded="false">Categorias</a>
                             <ul class="dropdown-menu" aria-labelledby="dropdown04">
-                                <li><a class="dropdown-item" href="DAOCategoria/CadastroCategorias.jsp">Cadastro Categorias</a></li>
                                 <li><a class="dropdown-item" href="DAOCategoria/ListarCategorias.jsp">Listar Categorias</a></li>
-                                <li><a class="dropdown-item" href="DAOCategoria/EditarCategorias.jsp">Editar Categorias</a></li>
-                                <li><a class="dropdown-item" href="DAOCategoria/ExcluirCategorias.jsp">Excluir Categorias</a></li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-bs-toggle="dropdown" aria-expanded="false">Movimentos</a>
                             <ul class="dropdown-menu" aria-labelledby="dropdown04">
-                                <li><a class="dropdown-item" href="DAOMovimento/CadastroMovimentos.jsp">Cadastro Movimentos</a></li>
                                 <li><a class="dropdown-item" href="DAOMovimento/ListarMovimentos.jsp">Listar Movimentos</a></li>
-                                <li><a class="dropdown-item" href="DAOMovimento/EditarMovimentos.jsp">Editar Movimentos</a></li>
-                                <li><a class="dropdown-item" href="DAOMovimento/ExcluirMovimentos.jsp">Excluir Movimentos</a></li>
                             </ul>
                         </li>
                     </ul>

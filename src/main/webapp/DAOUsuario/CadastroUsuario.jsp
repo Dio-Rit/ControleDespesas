@@ -44,23 +44,11 @@
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarsExample04">
-                    <ul class="navbar-nav me-auto mb-2 mb-md-0">
-
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-bs-toggle="dropdown" aria-expanded="false">Usuários</a>
-                            <ul class="dropdown-menu" aria-labelledby="dropdown04">
-                                <li><a class="dropdown-item" href="../DAOUsuario/ListarUsuarios.jsp">Listar Usuários</a></li>
-                                <li><a class="dropdown-item" href="../DAOUsuario/EditarUsuarios.jsp">Editar Usuários</a></li>
-                                <li><a class="dropdown-item" href="../DAOUsuario/ExcluirUsuarios.jsp">Excluir Usuários</a></li>
-                            </ul>
-                        </li>
-
-                    </ul>
                     <div class="float-end" id="navbarsExampleDefault">
                         <ul class="navbar-nav mr-auto">
                         </ul>
 
-                        <form action="../home.jsp">
+                        <form action="../DAOUsuario/ListarUsuarios.jsp">
                             <button type="submit" class="btn btn-dark">Voltar</input>
                         </form>
 
@@ -68,7 +56,6 @@
                 </div>
             </div>
         </nav>
-        
         
         <div id="CadastroUsuario">
             <form name="AcaoUsuario" id="AcaoUsuario" method="post" action="../AcaoUsuario?param=SalvarUsuario">
