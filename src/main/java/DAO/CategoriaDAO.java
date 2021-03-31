@@ -10,6 +10,7 @@ import Apoio.IDAO_T;
 import Entidade.Categoria;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.ArrayList;
 
 /**
  *
@@ -19,8 +20,8 @@ public class CategoriaDAO implements IDAO_T<Categoria> {
 
     ResultSet resultadoQ = null;
 
-    @Override
-    public String salvar(Categoria o) {
+    
+    public boolean salvar1(Categoria o) {
         try {
             Statement st = ConexaoBD.getInstance().getConnection().createStatement();
 
@@ -36,14 +37,17 @@ public class CategoriaDAO implements IDAO_T<Categoria> {
             int resultado = st.executeUpdate(sql);
 
             if (resultado == 0) {
-                return "Erro ao inserir";
+                //return "Erro ao inserir";
+                return false;
             } else {
-                return null;
+                //return null;
+                return true;
             }
 
         } catch (Exception e) {
             System.out.println("Erro salvar categoria = " + e);
-            return e.toString();
+            //return e.toString();
+            return false;
         }
     }
 
@@ -69,22 +73,23 @@ public class CategoriaDAO implements IDAO_T<Categoria> {
         }
     }
 
-    @Override
-    public String excluir(int id) {
+    public boolean excluir1(int id) {
         try {
             Statement st = ConexaoBD.getInstance().getConnection().createStatement();
 
             String sql = "UPDATE categoria "
-                    + "SET x = 'Inativo' "
-                    + "WHERE id = " + id;
+                    + "SET x = 'I' "
+                    + "WHERE id_categoria = " + id;
 
             int resultado = st.executeUpdate(sql);
 
-            return null;
+            //return null;
+            return true;
 
         } catch (Exception e) {
             System.out.println("Erro ao excluir categoria = " + e);
-            return e.toString();
+            //return e.toString();
+            return false;
         }
     }
 
@@ -98,7 +103,7 @@ public class CategoriaDAO implements IDAO_T<Categoria> {
             String sql = ""
                     + "SELECT * "
                     + "FROM categoria "
-                    + "WHERE id = " + id;
+                    + "WHERE id_categoria = " + id;
 
             System.out.println("Sql: " + sql);
 
@@ -117,6 +122,68 @@ public class CategoriaDAO implements IDAO_T<Categoria> {
         }
 
         return usu;
+    }
+
+    public ArrayList<Categoria> consultarTodos() {
+
+        ArrayList<Categoria> usuario = new ArrayList();
+
+        try {
+            Statement st = ConexaoBD.getInstance().getConnection().createStatement();
+
+            String sql = "select * "
+                    + "from "
+                    + "categoria "
+                    + "order by nome";
+
+            ResultSet resultado = st.executeQuery(sql);
+
+            while (resultado.next()) {
+                Categoria c = new Categoria();
+                c.setId_categoria(resultado.getInt("id_categoria"));
+                c.setNome(resultado.getString("nome"));
+                c.setDescricao(resultado.getString("descricao"));
+                c.setX(resultado.getString("x"));
+
+                usuario.add(c);
+            }
+
+        } catch (Exception e) {
+            System.out.println("Erro ao consultar Categoria: " + e);
+        }
+
+        return usuario;
+    }
+    
+        public int ultimoID(){
+        int x=0;
+        try {
+            Statement st = ConexaoBD.getInstance().getConnection().createStatement();
+
+            String sql = "select max(id_categoria) "
+                    + "from "
+                    + "categoria ";
+
+            ResultSet resultado = st.executeQuery(sql);
+            resultado.next();
+            x = resultado.getInt("max");
+            
+
+        } catch (Exception e) {
+            System.out.println("Erro ao consultar id: " + e);
+        }
+        
+        return x;
+    }
+
+    @Override
+    public String salvar(Categoria o) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public String excluir(int id) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }

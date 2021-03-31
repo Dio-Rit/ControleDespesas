@@ -78,6 +78,23 @@ public class AcaoUsuario extends HttpServlet {
 
             UsuarioDAO b = new UsuarioDAO();
             b.excluir(Integer.parseInt(request.getParameter("id")));
+
+        } else if (param.equals("ListarUsuario")) {
+            int id = Integer.parseInt(request.getParameter("id"));
+            String nome = request.getParameter("nome");
+            String login = request.getParameter("login");
+            String senha = request.getParameter("senha");
+            String status = request.getParameter("x");
+
+            Usuario tl = new Usuario();
+            tl.setId(id);
+            tl.setNome(nome);
+            tl.setLogin(login);
+            tl.setSenha(senha);
+            tl.setX(status);
+
+            response.sendRedirect("/ControleDespesas/DAOUsuario/ListarUsuarios.jsp");
+
         }
 
     }
@@ -110,7 +127,7 @@ public class AcaoUsuario extends HttpServlet {
 
             UsuarioDAO c = new UsuarioDAO();
             c.salvar(u);
-            response.sendRedirect("../DAOUsuario/ListarUsuarios.jsp");
+            response.sendRedirect("/ControleDespesas/DAOUsuario/ListarUsuarios.jsp");
         }
 
     }

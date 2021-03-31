@@ -1,5 +1,8 @@
 
 
+<%@page import="DAO.PessoaDAO"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="Entidade.Pessoa"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -36,7 +39,7 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-                <div class="collapse navbar-collapse" id="navbarsExample04">
+                <div class="float-end" id="navbarsExample04">
                     <div class="float-end" id="navbarsExampleDefault">
 
                         <form action="../home.jsp">
@@ -64,6 +67,11 @@
                                 <div class="row">
                                     <br>
                                 </div>
+
+                                <%
+                                    ArrayList<Pessoa> pessoa = new PessoaDAO().consultarTodos();
+                                %>
+
                                 <div class="row">
                                     <table class="table table-striped ">
                                         <thead>
@@ -75,18 +83,27 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr data-th-each="c : {usuario}">
-                                                <td data-th-text="{c.}"></td>
-                                                <td data-th-text="${c.descricao}"></td>
+                                            <%
+                                                for (int i = 0; i < pessoa.size(); i++) {
+                                                    Pessoa categ = pessoa.get(i);
+                                                    if (categ.getX().equals("A")) {
+                                            %>
+                                            <tr>
+                                                <td><%= categ.getId_pessoa()%></td>
+                                                <td><%= categ.getNome()%></td>
+                                                <td><%= categ.getCpf()%></td>
                                                 <td>
-                                                    <a th:href="@{/money/categorias/edit/{id}(id=${c.id_categoria})}"   class="btn btn-success" title="Editar">
+                                                    <a href="../AcaoPessoa?param=EditarPessoa"   class="btn btn-success" title="Editar" >
                                                         <i class="fas fa-edit"></i>
                                                     </a>
-                                                    <a th:href="@{/money/categorias/delete/{id}(id=${c.id_categoria})}" class="btn btn-danger" title="Excluir">
-                                                        <i class="fas fa-trash"></i>
+                                                    <a href="../AcaoPessoa?param=ExcluirPessoa&id=<%categ.getId_pessoa();%>" class="btn btn-danger" title="Excluir">
                                                     </a>
                                                 </td>
                                             </tr>
+                                            <%
+                                                    }
+                                                }
+                                            %>
                                         </tbody>
                                     </table>
                                 </div>

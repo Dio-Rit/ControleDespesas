@@ -1,5 +1,8 @@
 
 
+<%@page import="DAO.UsuarioDAO"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="Entidade.Usuario"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -23,7 +26,7 @@
             }
         </style>
 
-        <!-- Bootstrap core CSS -->
+        <!--Bootstrap core CSS -->
         <link href="../css/bootstrap.min.css" rel="stylesheet">
 
         <link href="../css/navbar.css" rel="stylesheet">
@@ -36,7 +39,7 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-                <div class="collapse navbar-collapse" id="navbarsExample04">
+                <div class="float-end" id="navbarsExample04">
                     <div class="float-end" id="navbarsExampleDefault">
 
                         <form action="../home.jsp">
@@ -64,6 +67,11 @@
                                 <div class="row">
                                     <br>
                                 </div>
+
+                                <%
+                                    ArrayList<Usuario> usuario = new UsuarioDAO().consultarTodos();
+                                %>
+
                                 <div class="row">
                                     <table class="table table-striped ">
                                         <thead>
@@ -75,18 +83,29 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr data-th-each="c : {usuario}">
-                                                <td data-th-text="{c.}"></td>
-                                                <td data-th-text="${c.descricao}"></td>
+                                            <%
+                                                for (int i = 0; i < usuario.size(); i++) {
+                                                    Usuario categ = usuario.get(i);
+                                                    if (categ.getX().equals("A")) {
+                                            %>
+                                            <tr>
+                                                <td><%= categ.getId()%></td>
+                                                <td><%= categ.getNome()%></td>
+                                                <td><%= categ.getLogin()%></td>
                                                 <td>
-                                                    <a th:href="@{/money/categorias/edit/{id}(id=${c.id_categoria})}"   class="btn btn-success" title="Editar">
-                                                        <i class="fas fa-edit"></i>
-                                                    </a>
-                                                    <a th:href="@{/money/categorias/delete/{id}(id=${c.id_categoria})}" class="btn btn-danger" title="Excluir">
-                                                        <i class="fas fa-trash"></i>
-                                                    </a>
+                                                       <a href=""   class="btn btn-success" title="Editar">
+                                                           <i class="fas fa-edit"></i>
+                                                       </a>
+                                                       <a href="@{/money/categorias/delete/{id}(id=${c.id_categoria})}" class="btn btn-danger" title="Excluir">
+                                                           <i class="fas fa-trash"></i>
+                                                       </a>
                                                 </td>
+
                                             </tr>
+                                            <%
+                                                    }
+                                                }
+                                            %>
                                         </tbody>
                                     </table>
                                 </div>

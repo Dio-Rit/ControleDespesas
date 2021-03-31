@@ -43,7 +43,7 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-                <div class="collapse navbar-collapse" id="navbarsExample04">
+                <div class="float-end" id="navbarsExample04">
                     <div class="float-end" id="navbarsExampleDefault">
                         <ul class="navbar-nav mr-auto">
                         </ul>

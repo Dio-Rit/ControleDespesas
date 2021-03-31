@@ -9,8 +9,6 @@ package Apoio;
  * @author fabricio.pretto
  */
 import java.sql.*;
-import java.io.*;
-import java.util.*;
 
 public class ConexaoBD {
 

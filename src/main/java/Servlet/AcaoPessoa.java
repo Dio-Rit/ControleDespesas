@@ -58,7 +58,43 @@ public class AcaoPessoa extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        //processRequest(request, response);
+
+        String param = request.getParameter("param");
+
+        if (param.equals("EditarPessoa")) {
+            Pessoa u = new Pessoa();
+            u.setId_pessoa(Integer.parseInt(request.getParameter("id_Pessoa")));
+            u.setNome(request.getParameter("Nome"));
+            u.setCpf(request.getParameter("CPF"));
+            u.setX("A");
+
+            PessoaDAO a = new PessoaDAO();
+            a.atualizar(u);
+            response.sendRedirect("/ControleDespesas/DAOPessoa/ListarPessoa.jsp");
+
+        } else if (param.equals("ExcluirPessoa")) {
+
+            PessoaDAO b = new PessoaDAO();
+            b.excluir1(Integer.parseInt(request.getParameter("id")));
+            response.sendRedirect("/ControleDespesas/DAOPessoa/ListarPessoa.jsp");
+
+
+        } else if (param.equals("ListarPessoa")) {
+            int id = Integer.parseInt(request.getParameter("id"));
+            String nome = request.getParameter("Nome");
+            String cpf = request.getParameter("CPF");
+            String status = request.getParameter("x");
+
+            Pessoa tl = new Pessoa();
+            tl.setId_pessoa(id);
+            tl.setNome(nome);
+            tl.setCpf(cpf);
+            tl.setX(status);
+
+            response.sendRedirect("/ControleDespesas/DAOPessoa/ListarPessoa.jsp");
+
+        }
     }
 
     /**
@@ -87,7 +123,7 @@ public class AcaoPessoa extends HttpServlet {
 
             PessoaDAO c = new PessoaDAO();
             c.salvar(u);
-            response.sendRedirect("../DAOPessoa/ListarPessoas.jsp");
+            response.sendRedirect("/ControleDespesas/DAOPessoa/CadastroPessoas.jsp");
         }
     }
 

@@ -13,9 +13,7 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.sql.ResultSet;
 import java.sql.Statement;
-import javax.swing.JTable;
-import javax.swing.table.DefaultTableModel;
-import javax.swing.table.TableColumn;
+import java.util.ArrayList;
 
 /**
  *
@@ -60,8 +58,7 @@ public class UsuarioDAO implements IDAO_T<Usuario> {
         return false;
     }
 
-    @Override
-    public String salvar(Usuario o) {
+    public boolean salvar1(Usuario o) {
         try {
             Statement st = ConexaoBD.getInstance().getConnection().createStatement();
 
@@ -78,14 +75,17 @@ public class UsuarioDAO implements IDAO_T<Usuario> {
             int resultado = st.executeUpdate(sql);
 
             if (resultado == 0) {
-                return "Erro ao inserir";
+                //return "Erro ao inserir";
+                return false;
             } else {
-                return null;
+                //return null;
+                return true;
             }
 
         } catch (Exception e) {
             System.out.println("Erro salvar usuário = " + e);
-            return e.toString();
+            //return e.toString();
+            return false;
         }
     }
 
@@ -112,22 +112,23 @@ public class UsuarioDAO implements IDAO_T<Usuario> {
         }
     }
 
-    @Override
-    public String excluir(int id) {
+    public boolean excluir1(int id) {
         try {
             Statement st = ConexaoBD.getInstance().getConnection().createStatement();
 
             String sql = "UPDATE usuario "
-                    + "SET x = 'Inativo' "
-                    + "WHERE id = " + id;
+                    + "SET x = 'I' "
+                    + "WHERE id_usuario = " + id;
 
             int resultado = st.executeUpdate(sql);
 
-            return null;
+            //return null;
+            return true;
 
         } catch (Exception e) {
             System.out.println("Erro ao excluir Usuário = " + e);
-            return e.toString();
+            //return e.toString();
+            return false;
         }
     }
 
@@ -141,7 +142,7 @@ public class UsuarioDAO implements IDAO_T<Usuario> {
             String sql = ""
                     + "SELECT * "
                     + "FROM usuario "
-                    + "WHERE id = " + id;
+                    + "WHERE id_usuario = " + id;
 
             System.out.println("Sql: " + sql);
 
@@ -154,6 +155,7 @@ public class UsuarioDAO implements IDAO_T<Usuario> {
                 usu.setNome(resultadoQ.getString("nome"));
                 usu.setLogin(resultadoQ.getString("login"));
                 usu.setSenha(resultadoQ.getString("senha"));
+                System.out.println(usu.getNome());
             }
 
         } catch (Exception e) {
@@ -163,32 +165,66 @@ public class UsuarioDAO implements IDAO_T<Usuario> {
         return usu;
     }
 
-    public boolean Validacontem(String login) {
-        try {
+    public ArrayList<Usuario> consultarTodos() {
 
+        ArrayList<Usuario> usuario = new ArrayList();
+
+        try {
             Statement st = ConexaoBD.getInstance().getConnection().createStatement();
 
-            String sql = "SELECT * "
-                    + "FROM usuario "
-                    + "WHERE login = '" + login + "' "
-                    + "AND x = 'A';";
-            System.out.println("Sql = " + sql);
+            String sql = "select * "
+                    + "from "
+                    + "usuario "
+                    + "order by nome";
+            System.out.println(sql);
+            ResultSet resultado = st.executeQuery(sql);
 
-            resultadoQ = st.executeQuery(sql);
+            while (resultado.next()) {
+                Usuario c = new Usuario();
+                c.setId(resultado.getInt("id_usuario"));
+                c.setNome(resultado.getString("nome"));
+                c.setLogin(resultado.getString("login"));
+                c.setSenha(resultado.getString("senha"));
+                c.setX(resultado.getString("x"));
 
-            if (resultadoQ.next()) {
-                String newLogin = resultadoQ.getString("login");
-                System.out.println(newLogin);
-
-                if (login.equals(newLogin)) {
-                    return false;
-                }
+                usuario.add(c);
             }
 
         } catch (Exception e) {
-            System.out.println("Erro ao procurar login = " + e);
+            System.out.println("Erro ao consultar Usuario: " + e);
         }
-        return true;
+
+        return usuario;
+    }
+
+    public int ultimoID() {
+        int x = 0;
+        try {
+            Statement st = ConexaoBD.getInstance().getConnection().createStatement();
+
+            String sql = "select max(id_usuario) "
+                    + "from "
+                    + "usuario ";
+
+            ResultSet resultado = st.executeQuery(sql);
+            resultado.next();
+            x = resultado.getInt("max");
+
+        } catch (Exception e) {
+            System.out.println("Erro ao consultar id: " + e);
+        }
+
+        return x;
+    }
+
+    @Override
+    public String salvar(Usuario o) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public String excluir(int id) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }

@@ -1,5 +1,8 @@
 
 
+<%@page import="DAO.CategoriaDAO"%>
+<%@page import="Entidade.Categoria"%>
+<%@page import="java.util.ArrayList"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -36,7 +39,7 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-                <div class="collapse navbar-collapse" id="navbarsExample04">
+                <div class="float-end" id="navbarsExample04">
                     <div class="float-end" id="navbarsExampleDefault">
 
                         <form action="../home.jsp">
@@ -64,6 +67,11 @@
                                 <div class="row">
                                     <br>
                                 </div>
+
+                                <%
+                                    ArrayList<Categoria> categoria = new CategoriaDAO().consultarTodos();
+                                %>
+
                                 <div class="row">
                                     <table class="table table-striped ">
                                         <thead>
@@ -74,19 +82,30 @@
                                                 <th scope="col"></th>
                                             </tr>
                                         </thead>
+                                        <%
+                                            for (int i = 0; i < categoria.size(); i++) {
+                                                Categoria categ = categoria.get(i);
+                                                if (categ.getX().equals("A")) {
+                                        %>
                                         <tbody>
-                                            <tr data-th-each="c : {usuario}">
-                                                <td data-th-text="{c.}"></td>
-                                                <td data-th-text="${c.descricao}"></td>
+                                            <tr>
+                                                <td><%= categ.getId_categoria()%></td>
+                                                <td><%= categ.getNome()%></td>
+                                                <td><%= categ.getDescricao()%></td>
                                                 <td>
-                                                    <a th:href="@{/money/categorias/edit/{id}(id=${c.id_categoria})}"   class="btn btn-success" title="Editar">
+                                                    <a href=""   class="btn btn-success" title="Editar">
                                                         <i class="fas fa-edit"></i>
                                                     </a>
-                                                    <a th:href="@{/money/categorias/delete/{id}(id=${c.id_categoria})}" class="btn btn-danger" title="Excluir">
+                                                    <a href="@{/money/categorias/delete/{id}(id=${c.id_categoria})}" class="btn btn-danger" title="Excluir">
                                                         <i class="fas fa-trash"></i>
                                                     </a>
                                                 </td>
+
                                             </tr>
+                                            <%
+                                                    }
+                                                }
+                                            %>
                                         </tbody>
                                     </table>
                                 </div>
