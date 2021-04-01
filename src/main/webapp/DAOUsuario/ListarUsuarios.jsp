@@ -25,8 +25,12 @@
                 }
             }
         </style>
+        <!-- Bootstrap core CSS -->
 
-        <!--Bootstrap core CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+
         <link href="../css/bootstrap.min.css" rel="stylesheet">
 
         <link href="../css/navbar.css" rel="stylesheet">
@@ -93,14 +97,13 @@
                                                 <td><%= categ.getNome()%></td>
                                                 <td><%= categ.getLogin()%></td>
                                                 <td>
-                                                       <a href=""   class="btn btn-success" title="Editar">
-                                                           <i class="fas fa-edit"></i>
-                                                       </a>
-                                                       <a href="@{/money/categorias/delete/{id}(id=${c.id_categoria})}" class="btn btn-danger" title="Excluir">
-                                                           <i class="fas fa-trash"></i>
-                                                       </a>
+                                                    <a href="../AcaoUsuario?param=EditarUsuario&id=<%= categ.getId()%>"  class="btn btn-success" title="Editar" >
+                                                        <i class="fas fa-edit"></i>
+                                                    </a>
+                                                    <a href="../AcaoUsuario?param=ExcluirUsuario&id=<%= categ.getId()%>" class="btn btn-danger" title="Excluir">
+                                                        <i class="fas fa-trash"></i>
+                                                    </a>
                                                 </td>
-
                                             </tr>
                                             <%
                                                     }

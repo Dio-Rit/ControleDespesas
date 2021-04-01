@@ -25,8 +25,12 @@
                 }
             }
         </style>
-
         <!-- Bootstrap core CSS -->
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+
         <link href="../css/bootstrap.min.css" rel="stylesheet">
 
         <link href="../css/navbar.css" rel="stylesheet">
@@ -93,10 +97,11 @@
                                                 <td><%= categ.getNome()%></td>
                                                 <td><%= categ.getCpf()%></td>
                                                 <td>
-                                                    <a href="../AcaoPessoa?param=EditarPessoa"   class="btn btn-success" title="Editar" >
+                                                    <a href="../AcaoPessoa?param=EditarPessoa&id=<%= categ.getId_pessoa()%>"  class="btn btn-success" title="Editar" >
                                                         <i class="fas fa-edit"></i>
                                                     </a>
-                                                    <a href="../AcaoPessoa?param=ExcluirPessoa&id=<%categ.getId_pessoa();%>" class="btn btn-danger" title="Excluir">
+                                                    <a href="../AcaoPessoa?param=ExcluirPessoa&id=<%= categ.getId_pessoa()%>" class="btn btn-danger" title="Excluir">
+                                                        <i class="fas fa-trash"></i>
                                                     </a>
                                                 </td>
                                             </tr>

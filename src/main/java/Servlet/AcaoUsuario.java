@@ -59,10 +59,14 @@ public class AcaoUsuario extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        //processRequest(request, response);
 
         String param = request.getParameter("param");
 
+        
+        
+        
+        
         if (param.equals("EditarUsuario")) {
             Usuario u = new Usuario();
             u.setId(Integer.parseInt(request.getParameter("id")));
@@ -74,10 +78,15 @@ public class AcaoUsuario extends HttpServlet {
             UsuarioDAO a = new UsuarioDAO();
             a.atualizar(u);
 
+            
+            
+            
+            
         } else if (param.equals("ExcluirUsuario")) {
 
             UsuarioDAO b = new UsuarioDAO();
-            b.excluir(Integer.parseInt(request.getParameter("id")));
+            b.excluir1(Integer.parseInt(request.getParameter("id")));
+            response.sendRedirect("/ControleDespesas/DAOUsuario/ListarUsuarios.jsp");
 
         } else if (param.equals("ListarUsuario")) {
             int id = Integer.parseInt(request.getParameter("id"));
@@ -126,7 +135,7 @@ public class AcaoUsuario extends HttpServlet {
             u.setX("A");
 
             UsuarioDAO c = new UsuarioDAO();
-            c.salvar(u);
+            c.salvar1(u);
             response.sendRedirect("/ControleDespesas/DAOUsuario/ListarUsuarios.jsp");
         }
 

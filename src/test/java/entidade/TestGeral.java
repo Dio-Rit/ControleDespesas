@@ -52,24 +52,6 @@ public class TestGeral {
     }
 
     @Test
-    public void testaUltimoIdPessoa() {
-        lastPessoa = pd.ultimoID();
-        assertEquals(1, lastPessoa);
-    }
-
-    @Test
-    public void testaUltimoIdCategoria() {
-        lastCategoria = cd.ultimoID();
-        assertEquals(1, lastCategoria);
-    }
-
-    @Test
-    public void testaUltimoIdUsuario() {
-        lastUsuario = ud.ultimoID();
-        assertEquals(1, lastUsuario);
-    }
-
-    @Test
     public void TesteExcluirPessoa() {
         boolean x = false;
         lastPessoa = pd.ultimoID();
@@ -91,6 +73,24 @@ public class TestGeral {
         lastUsuario = ud.ultimoID();
         x = ud.excluir1(lastUsuario);
         assertEquals(true, x);
+    }
+
+    @Test
+    public void testaUltimoIdPessoa() {
+        lastPessoa = pd.ultimoID();
+        assertEquals(1, lastPessoa);
+    }
+
+    @Test
+    public void testaUltimoIdCategoria() {
+        lastCategoria = cd.ultimoID();
+        assertEquals(1, lastCategoria);
+    }
+
+    @Test
+    public void testaUltimoIdUsuario() {
+        lastUsuario = ud.ultimoID();
+        assertEquals(1, lastUsuario);
     }
 
 }

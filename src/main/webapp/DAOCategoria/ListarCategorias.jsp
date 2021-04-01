@@ -25,8 +25,12 @@
                 }
             }
         </style>
-
         <!-- Bootstrap core CSS -->
+        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+
         <link href="../css/bootstrap.min.css" rel="stylesheet">
 
         <link href="../css/navbar.css" rel="stylesheet">
@@ -82,25 +86,25 @@
                                                 <th scope="col"></th>
                                             </tr>
                                         </thead>
-                                        <%
-                                            for (int i = 0; i < categoria.size(); i++) {
-                                                Categoria categ = categoria.get(i);
-                                                if (categ.getX().equals("A")) {
-                                        %>
                                         <tbody>
+                                            <%
+                                                for (int i = 0; i < categoria.size(); i++) {
+                                                    Categoria categ = categoria.get(i);
+                                                    if (categ.getX().equals("A")) {
+                                            %>
+
                                             <tr>
                                                 <td><%= categ.getId_categoria()%></td>
                                                 <td><%= categ.getNome()%></td>
                                                 <td><%= categ.getDescricao()%></td>
                                                 <td>
-                                                    <a href=""   class="btn btn-success" title="Editar">
+                                                    <a href="../AcaoCategoria?param=EditarCategoria&id=<%= categ.getId_categoria()%>"  class="btn btn-success" title="Editar" >
                                                         <i class="fas fa-edit"></i>
                                                     </a>
-                                                    <a href="@{/money/categorias/delete/{id}(id=${c.id_categoria})}" class="btn btn-danger" title="Excluir">
+                                                    <a href="../AcaoCategoria?param=ExcluirCategoria&id=<%= categ.getId_categoria()%>" class="btn btn-danger" title="Excluir">
                                                         <i class="fas fa-trash"></i>
                                                     </a>
                                                 </td>
-
                                             </tr>
                                             <%
                                                     }

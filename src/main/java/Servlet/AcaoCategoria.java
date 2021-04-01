@@ -60,6 +60,10 @@ public class AcaoCategoria extends HttpServlet {
             throws ServletException, IOException {
         // processRequest(request, response);
         String param = request.getParameter("param");
+
+        
+        
+        
         
         if (param.equals("EditarCategoria")) {
             Categoria u = new Categoria();
@@ -67,29 +71,34 @@ public class AcaoCategoria extends HttpServlet {
             u.setNome(request.getParameter("Nome"));
             u.setDescricao(request.getParameter("Descricao"));
             u.setX("A");
-            
+
             CategoriaDAO a = new CategoriaDAO();
             a.atualizar(u);
+
+            
+            
+            
             
         } else if (param.equals("ExcluirCategoria")) {
-            
+
             CategoriaDAO b = new CategoriaDAO();
-            b.excluir(Integer.parseInt(request.getParameter("id")));
-            
+            b.excluir1(Integer.parseInt(request.getParameter("id")));
+            response.sendRedirect("/ControleDespesas/DAOCategoria/ListarCategorias.jsp");
+
         } else if (param.equals("ListarCategoria")) {
             int id = Integer.parseInt(request.getParameter("id"));
             String nome = request.getParameter("Nome");
             String descricao = request.getParameter("Descricao");
             String status = request.getParameter("x");
-            
+
             Categoria tl = new Categoria();
             tl.setId_categoria(id);
             tl.setNome(nome);
             tl.setDescricao(descricao);
             tl.setX(status);
-            
-            response.sendRedirect("/ControleDespesas/DAOPessoa/ListarCategoria.jsp");
-            
+
+            response.sendRedirect("/ControleDespesas/DAOCategoria/ListarCategorias.jsp");
+
         }
     }
 
@@ -109,17 +118,17 @@ public class AcaoCategoria extends HttpServlet {
         String param = request.getParameter("param");
         String Nome = request.getParameter("Nome");
         String Descricao = request.getParameter("Descricao");
-        
+
         if (param.equals("SalvarCategoria")) {
-            
+
             Categoria u = new Categoria();
             u.setNome(Nome);
             u.setDescricao(Descricao);
             u.setX("A");
-            
+
             CategoriaDAO c = new CategoriaDAO();
-            c.salvar(u);
-            response.sendRedirect("/ControleDespesas/DAOCategoria/CadastroCategorias.jsp");
+            c.salvar1(u);
+            response.sendRedirect("/ControleDespesas/DAOCategoria/ListarCategorias.jsp");
         }
     }
 
