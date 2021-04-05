@@ -97,7 +97,7 @@
                                                 <td><%= categ.getNome()%></td>
                                                 <td><%= categ.getCpf()%></td>
                                                 <td>
-                                                    <a href="../AcaoPessoa?param=EditarPessoa&id=<%= categ.getId_pessoa()%>"  class="btn btn-success" title="Editar" >
+                                                    <a href="../DAOPessoa/AtualizaPessoas.jsp?param=id=<%= categ.getId_pessoa()%>"  class="btn btn-success" title="Editar" >
                                                         <i class="fas fa-edit"></i>
                                                     </a>
                                                     <a href="../AcaoPessoa?param=ExcluirPessoa&id=<%= categ.getId_pessoa()%>" class="btn btn-danger" title="Excluir">

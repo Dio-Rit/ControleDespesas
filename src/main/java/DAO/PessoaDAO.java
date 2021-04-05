@@ -31,8 +31,6 @@ public class PessoaDAO implements IDAO_T<Pessoa> {
                     + "'" + "A" + "'"
                     + ")";
 
-            System.out.println("Sql: " + sql);
-
             int resultado = st.executeUpdate(sql);
 
             if (resultado == 0) {
@@ -58,8 +56,6 @@ public class PessoaDAO implements IDAO_T<Pessoa> {
                     + "descricao = '" + o.getCpf() + "', "
                     + "WHERE id = " + o.getId_pessoa();
 
-            System.out.println("sql: " + sql);
-
             int resultado = st.executeUpdate(sql);
 
             return null;
@@ -70,7 +66,6 @@ public class PessoaDAO implements IDAO_T<Pessoa> {
         }
     }
 
-    
     public boolean excluir1(int id) {
         try {
             Statement st = ConexaoBD.getInstance().getConnection().createStatement();
@@ -83,7 +78,7 @@ public class PessoaDAO implements IDAO_T<Pessoa> {
 
             //return null;
             return true;
-            
+
         } catch (Exception e) {
             System.out.println("Erro ao excluir pessoa = " + e);
             //return e.toString();
@@ -102,8 +97,6 @@ public class PessoaDAO implements IDAO_T<Pessoa> {
                     + "SELECT * "
                     + "FROM pessoa "
                     + "WHERE id_pessoa = " + id;
-
-            System.out.println("Sql: " + sql);
 
             resultadoQ = st.executeQuery(sql);
 

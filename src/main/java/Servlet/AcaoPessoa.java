@@ -62,10 +62,6 @@ public class AcaoPessoa extends HttpServlet {
 
         String param = request.getParameter("param");
 
-        
-        
-        
-        
         if (param.equals("EditarPessoa")) {
             Pessoa u = new Pessoa();
             u.setId_pessoa(Integer.parseInt(request.getParameter("id_Pessoa")));
@@ -77,17 +73,11 @@ public class AcaoPessoa extends HttpServlet {
             a.atualizar(u);
             response.sendRedirect("/ControleDespesas/DAOPessoa/ListarPessoa.jsp");
 
-            
-            
-            
-            
-            
         } else if (param.equals("ExcluirPessoa")) {
 
             PessoaDAO b = new PessoaDAO();
             b.excluir1(Integer.parseInt(request.getParameter("id")));
             response.sendRedirect("/ControleDespesas/DAOPessoa/ListarPessoas.jsp");
-
 
         } else if (param.equals("ListarPessoa")) {
             int id = Integer.parseInt(request.getParameter("id"));

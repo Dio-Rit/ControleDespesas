@@ -20,7 +20,6 @@ public class CategoriaDAO implements IDAO_T<Categoria> {
 
     ResultSet resultadoQ = null;
 
-    
     public boolean salvar1(Categoria o) {
         try {
             Statement st = ConexaoBD.getInstance().getConnection().createStatement();
@@ -31,8 +30,6 @@ public class CategoriaDAO implements IDAO_T<Categoria> {
                     + "'" + o.getDescricao() + "',"
                     + "'" + "A" + "'"
                     + ")";
-
-            System.out.println("Sql: " + sql);
 
             int resultado = st.executeUpdate(sql);
 
@@ -60,8 +57,6 @@ public class CategoriaDAO implements IDAO_T<Categoria> {
                     + "SET nome = '" + o.getNome() + "', "
                     + "descricao = '" + o.getDescricao() + "', "
                     + "WHERE id = " + o.getId_categoria();
-
-            System.out.println("sql: " + sql);
 
             int resultado = st.executeUpdate(sql);
 
@@ -104,8 +99,6 @@ public class CategoriaDAO implements IDAO_T<Categoria> {
                     + "SELECT * "
                     + "FROM categoria "
                     + "WHERE id_categoria = " + id;
-
-            System.out.println("Sql: " + sql);
 
             resultadoQ = st.executeQuery(sql);
 
@@ -154,9 +147,9 @@ public class CategoriaDAO implements IDAO_T<Categoria> {
 
         return usuario;
     }
-    
-        public int ultimoID(){
-        int x=0;
+
+    public int ultimoID() {
+        int x = 0;
         try {
             Statement st = ConexaoBD.getInstance().getConnection().createStatement();
 
@@ -167,12 +160,11 @@ public class CategoriaDAO implements IDAO_T<Categoria> {
             ResultSet resultado = st.executeQuery(sql);
             resultado.next();
             x = resultado.getInt("max");
-            
 
         } catch (Exception e) {
             System.out.println("Erro ao consultar id: " + e);
         }
-        
+
         return x;
     }
 

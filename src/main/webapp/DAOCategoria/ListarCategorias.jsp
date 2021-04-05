@@ -98,7 +98,7 @@
                                                 <td><%= categ.getNome()%></td>
                                                 <td><%= categ.getDescricao()%></td>
                                                 <td>
-                                                    <a href="../AcaoCategoria?param=EditarCategoria&id=<%= categ.getId_categoria()%>"  class="btn btn-success" title="Editar" >
+                                                    <a href="../DAOCategoria/AtualizaCategorias.jsp?param=id=<%= categ.getId_categoria()%>"  class="btn btn-success" title="Editar" >
                                                         <i class="fas fa-edit"></i>
                                                     </a>
                                                     <a href="../AcaoCategoria?param=ExcluirCategoria&id=<%= categ.getId_categoria()%>" class="btn btn-danger" title="Excluir">

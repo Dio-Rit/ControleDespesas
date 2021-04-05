@@ -39,7 +39,6 @@ public class UsuarioDAO implements IDAO_T<Usuario> {
                     + "WHERE login = '" + login + "' "
                     + "AND senha = '" + senha + "' "
                     + "AND x = 'A';";
-            System.out.println("Sql = " + sql);
 
             resultadoQ = st.executeQuery(sql);
 
@@ -70,8 +69,6 @@ public class UsuarioDAO implements IDAO_T<Usuario> {
                     + "'" + "A" + "'"
                     + ")";
 
-            System.out.println("Sql: " + sql);
-
             int resultado = st.executeUpdate(sql);
 
             if (resultado == 0) {
@@ -99,8 +96,6 @@ public class UsuarioDAO implements IDAO_T<Usuario> {
                     + "login = '" + o.getLogin() + "', "
                     + "senha = '" + o.getSenha() + "' "
                     + "WHERE id = " + o.getId();
-
-            System.out.println("sql: " + sql);
 
             int resultado = st.executeUpdate(sql);
 
@@ -144,8 +139,6 @@ public class UsuarioDAO implements IDAO_T<Usuario> {
                     + "FROM usuario "
                     + "WHERE id_usuario = " + id;
 
-            System.out.println("Sql: " + sql);
-
             resultadoQ = st.executeQuery(sql);
 
             while (resultadoQ.next()) {
@@ -176,7 +169,6 @@ public class UsuarioDAO implements IDAO_T<Usuario> {
                     + "from "
                     + "usuario "
                     + "order by nome";
-            System.out.println(sql);
             ResultSet resultado = st.executeQuery(sql);
 
             while (resultado.next()) {

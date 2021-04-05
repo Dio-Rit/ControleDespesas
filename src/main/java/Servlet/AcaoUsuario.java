@@ -63,10 +63,6 @@ public class AcaoUsuario extends HttpServlet {
 
         String param = request.getParameter("param");
 
-        
-        
-        
-        
         if (param.equals("EditarUsuario")) {
             Usuario u = new Usuario();
             u.setId(Integer.parseInt(request.getParameter("id")));
@@ -77,11 +73,8 @@ public class AcaoUsuario extends HttpServlet {
 
             UsuarioDAO a = new UsuarioDAO();
             a.atualizar(u);
+            response.sendRedirect("/ControleDespesas/DAOUsuario/ListarUsuarios.jsp");
 
-            
-            
-            
-            
         } else if (param.equals("ExcluirUsuario")) {
 
             UsuarioDAO b = new UsuarioDAO();

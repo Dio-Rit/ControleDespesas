@@ -61,10 +61,6 @@ public class AcaoCategoria extends HttpServlet {
         // processRequest(request, response);
         String param = request.getParameter("param");
 
-        
-        
-        
-        
         if (param.equals("EditarCategoria")) {
             Categoria u = new Categoria();
             u.setId_categoria(Integer.parseInt(request.getParameter("id")));
@@ -74,11 +70,8 @@ public class AcaoCategoria extends HttpServlet {
 
             CategoriaDAO a = new CategoriaDAO();
             a.atualizar(u);
+            response.sendRedirect("/ControleDespesas/DAOCategoria/ListarCategorias.jsp");
 
-            
-            
-            
-            
         } else if (param.equals("ExcluirCategoria")) {
 
             CategoriaDAO b = new CategoriaDAO();
