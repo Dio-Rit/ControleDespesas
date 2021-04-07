@@ -1,5 +1,6 @@
 
 
+<%@page import="Entidade.Pessoa"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -52,11 +53,11 @@
 
         <div id="CadastroUsuario">
             <form name="AcaoPessoa" id="AcaoPessoa" method="post" action="../AcaoPessoa?param=SalvarPessoa">
+                
+                <% Pessoa pes = (Pessoa) request.getAttribute("objPessoa");%>
+                
                 <center>
-                    <div class="form-group col-md-3">
-                        <label for="Id">Id</label>
-                        <input type="text" class="form-control" id="Id" name="Id" aria-describedby="Id" required="" disabled="">
-                    </div>
+                    <input type="hidden" id="Id" name="Id" value="<%= pes.getId_pessoa()%>">
 
                     <div class="form-group col-md-3">
                         <label for="Nome">Nome</label>

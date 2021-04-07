@@ -9,6 +9,7 @@ import DAO.PessoaDAO;
 import Entidade.Pessoa;
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -73,6 +74,17 @@ public class AcaoPessoa extends HttpServlet {
             a.atualizar(u);
             response.sendRedirect("/ControleDespesas/DAOPessoa/ListarPessoa.jsp");
 
+        } else if (param.equals("EdPessoa")) {
+            String id = request.getParameter("id");
+
+            Pessoa pes = new PessoaDAO().consultarId(Integer.parseInt(id));
+
+            request.setAttribute("objPessoa", pes);
+
+            System.out.println(pes.getNome());
+
+            encaminharPagina("/ControleDespesas/DAOPessoa/AtualizaPessoas.jsp", request, response);
+
         } else if (param.equals("ExcluirPessoa")) {
 
             PessoaDAO b = new PessoaDAO();
@@ -123,6 +135,15 @@ public class AcaoPessoa extends HttpServlet {
             PessoaDAO c = new PessoaDAO();
             c.salvar1(u);
             response.sendRedirect("/ControleDespesas/DAOPessoa/ListarPessoas.jsp");
+        }
+    }
+
+    private void encaminharPagina(String pagina, HttpServletRequest request, HttpServletResponse response) {
+        try {
+            RequestDispatcher rd = request.getRequestDispatcher(pagina);
+            rd.forward(request, response);
+        } catch (Exception e) {
+            System.out.println("Erro ao encaminhar: " + e);
         }
     }
 

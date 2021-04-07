@@ -22,12 +22,6 @@
                 }
             }
 
-            .CadastroUsuario{
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translateY(-50%) translateX(-50%);
-            }
         </style>
 
         <!-- Bootstrap core CSS -->
@@ -56,7 +50,7 @@
                 </div>
             </div>
         </nav>
-        
+
         <div id="CadastroUsuario">
             <form name="AcaoUsuario" id="AcaoUsuario" method="post" action="../AcaoUsuario?param=SalvarUsuario">
                 <center>
@@ -79,8 +73,8 @@
                 </center>
             </form>
         </div>
-        
-        
+
+
 
         <script src="../js/bootstrap.bundle.min.js"></script>
 

@@ -9,6 +9,7 @@ import DAO.CategoriaDAO;
 import Entidade.Categoria;
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -72,6 +73,17 @@ public class AcaoCategoria extends HttpServlet {
             a.atualizar(u);
             response.sendRedirect("/ControleDespesas/DAOCategoria/ListarCategorias.jsp");
 
+        } else if (param.equals("EdCategoria")) {
+            String id = request.getParameter("id");
+
+            Categoria cat = new CategoriaDAO().consultarId(Integer.parseInt(id));
+
+            request.setAttribute("objCategoria", cat);
+            
+            System.out.println(cat.getNome());
+
+            encaminharPagina("/ControleDespesas/DAOCategoria/AtualizaCategorias.jsp", request, response);
+
         } else if (param.equals("ExcluirCategoria")) {
 
             CategoriaDAO b = new CategoriaDAO();
@@ -122,6 +134,15 @@ public class AcaoCategoria extends HttpServlet {
             CategoriaDAO c = new CategoriaDAO();
             c.salvar1(u);
             response.sendRedirect("/ControleDespesas/DAOCategoria/ListarCategorias.jsp");
+        }
+    }
+
+    private void encaminharPagina(String pagina, HttpServletRequest request, HttpServletResponse response) {
+        try {
+            RequestDispatcher rd = request.getRequestDispatcher(pagina);
+            rd.forward(request, response);
+        } catch (Exception e) {
+            System.out.println("Erro ao encaminhar: " + e);
         }
     }
 

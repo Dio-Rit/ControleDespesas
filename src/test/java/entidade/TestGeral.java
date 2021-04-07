@@ -75,7 +75,7 @@ public class TestGeral {
         assertEquals(true, x);
     }
 
-    @Test
+  /*  @Test
     public void testaUltimoIdPessoa() {
         lastPessoa = pd.ultimoID();
         assertEquals(1, lastPessoa);
@@ -91,6 +91,6 @@ public class TestGeral {
     public void testaUltimoIdUsuario() {
         lastUsuario = ud.ultimoID();
         assertEquals(1, lastUsuario);
-    }
+    }*/
 
 }

@@ -1,5 +1,6 @@
 
 
+<%@page import="Entidade.Categoria"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -52,11 +53,11 @@
 
         <div id="CadastroCategoria">
             <form name="AcaoCategoria" id="Acaocategoria" method="post" action="../AcaoCategoria?param=SalvarCategoria">
+                
+                <% Categoria cat = (Categoria) request.getAttribute("objCategoria");%>
+                
                 <center>
-                    <div class="form-group col-md-3">
-                        <label for="Id">Id</label>
-                        <input type="text" class="form-control" id="Id" name="Id" aria-describedby="Id" required="" disabled="">
-                    </div>
+                    <input type="hidden" id="Id" name="Id" value="<%= cat.getId_categoria()%>">
 
                     <div class="form-group col-md-3">
                         <label for="Nome">Nome</label>

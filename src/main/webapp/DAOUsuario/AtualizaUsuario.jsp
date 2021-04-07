@@ -1,5 +1,6 @@
 
 
+<%@page import="Entidade.Usuario"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -22,12 +23,6 @@
                 }
             }
 
-            .CadastroUsuario{
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translateY(-50%) translateX(-50%);
-            }
         </style>
 
         <!-- Bootstrap core CSS -->
@@ -56,36 +51,38 @@
                 </div>
             </div>
         </nav>
-        
-        <div id="CadastroUsuario">
+
+        <div id="EditarUsuario">
+            
             <form name="AcaoUsuario" id="AcaoUsuario" method="post" action="../AcaoUsuario?param=EditarUsuario">
+
+                <% Usuario usu = (Usuario) request.getAttribute("objUsuario");%>
+                
                 <center>
-                    <div class="form-group col-md-3">
-                        <label for="Id">Id</label>
-                        <input type="text" class="form-control" id="Id" name="Id" aria-describedby="Id" required="" disabled="">
-                    </div>
-                    
+
+                    <input type="hidden" id="Id" name="Id" value="<%= usu.getId()%>">
+
                     <div class="form-group col-md-3">
                         <label for="Nome">Nome</label>
-                        <input type="text" class="form-control" id="Nome" name="Nome" aria-describedby="Nome" placeholder="Digite seu nome" required="">
+                        <input type="text" class="form-control" id="Nome" name="Nome" aria-describedby="Nome" required="" value="<%= usu.getNome() %>">
                     </div>
 
                     <div class="form-group col-md-3">
                         <label for="Login">Login</label>
-                        <input type="text" class="form-control" id="Login" name="Login" aria-describedby="Login" placeholder="Digite seu login" required="">
+                        <input type="text" class="form-control" id="Login" name="Login" aria-describedby="Login" required="" value="<%= usu.getLogin() %>">
                     </div>
 
                     <div class="form-group col-md-3">
                         <label for="Senha">Senha</label>
                         <input type="password" class="form-control" id="Senha" name="Senha" placeholder="Digite sua senha" required="">
                     </div>
+                    
                     <br>
                     <button type="submit" class="btn btn-dark">Atualizar</button>
+
                 </center>
             </form>
         </div>
-        
-        
 
         <script src="../js/bootstrap.bundle.min.js"></script>
 

@@ -9,6 +9,7 @@ import DAO.UsuarioDAO;
 import Entidade.Usuario;
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -75,6 +76,17 @@ public class AcaoUsuario extends HttpServlet {
             a.atualizar(u);
             response.sendRedirect("/ControleDespesas/DAOUsuario/ListarUsuarios.jsp");
 
+        } else if (param.equals("EdUsuario")) {
+            String id = request.getParameter("id");
+
+            Usuario usu = new UsuarioDAO().consultarId(Integer.parseInt(id));
+
+            request.setAttribute("objUsuario", usu);
+            
+            System.out.println(usu.getNome());
+            
+            encaminharPagina("/ControleDespesas/DAOUsuario/AtualizaUsuario.jsp", request, response);
+
         } else if (param.equals("ExcluirUsuario")) {
 
             UsuarioDAO b = new UsuarioDAO();
@@ -132,6 +144,15 @@ public class AcaoUsuario extends HttpServlet {
             response.sendRedirect("/ControleDespesas/DAOUsuario/ListarUsuarios.jsp");
         }
 
+    }
+
+    private void encaminharPagina(String pagina, HttpServletRequest request, HttpServletResponse response) {
+        try {
+            RequestDispatcher rd = request.getRequestDispatcher(pagina);
+            rd.forward(request, response);
+        } catch (Exception e) {
+            System.out.println("Erro ao encaminhar: " + e);
+        }
     }
 
     /**

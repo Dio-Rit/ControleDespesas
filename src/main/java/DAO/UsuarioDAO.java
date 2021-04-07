@@ -148,7 +148,6 @@ public class UsuarioDAO implements IDAO_T<Usuario> {
                 usu.setNome(resultadoQ.getString("nome"));
                 usu.setLogin(resultadoQ.getString("login"));
                 usu.setSenha(resultadoQ.getString("senha"));
-                System.out.println(usu.getNome());
             }
 
         } catch (Exception e) {

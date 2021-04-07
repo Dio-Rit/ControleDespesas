@@ -97,7 +97,7 @@
                                                 <td><%= categ.getNome()%></td>
                                                 <td><%= categ.getLogin()%></td>
                                                 <td>
-                                                    <a href="../DAOUsuario/AtualizaUsuario.jsp?param=id=<%= categ.getId()%>"  class="btn btn-success" title="Editar" >
+                                                    <a href="../AcaoUsuario?param=EdUsuario&id=<%= categ.getId()%>" class="btn btn-success" title="Editar" >
                                                         <i class="fas fa-edit"></i>
                                                     </a>
                                                     <a href="../AcaoUsuario?param=ExcluirUsuario&id=<%= categ.getId()%>" class="btn btn-danger" title="Excluir">
