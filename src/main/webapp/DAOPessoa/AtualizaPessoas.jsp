@@ -25,9 +25,9 @@
         </style>
 
         <!-- Bootstrap core CSS -->
-        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/bootstrap.min.css" rel="stylesheet">
 
-        <link href="../css/navbar.css" rel="stylesheet">
+        <link href="css/navbar.css" rel="stylesheet">
     </head>
     <body>
         <nav class="navbar navbar-expand-md navbar-dark bg-dark" aria-label="Fourth navbar example">
@@ -42,7 +42,7 @@
                         <ul class="navbar-nav mr-auto">
                         </ul>
 
-                        <form action="../DAOPessoa/ListarPessoas.jsp">
+                        <form action="DAOPessoa/ListarPessoas.jsp">
                             <button type="submit" class="btn btn-dark">Voltar</input>
                         </form>
 
@@ -52,29 +52,31 @@
         </nav>
 
         <div id="CadastroUsuario">
-            <form name="AcaoPessoa" id="AcaoPessoa" method="post" action="../AcaoPessoa?param=SalvarPessoa">
-                
+            <form name="AcaoPessoa" id="AcaoPessoa" method="post" action="AcaoPessoa?param=SalvarPessoa">
+
                 <% Pessoa pes = (Pessoa) request.getAttribute("objPessoa");%>
-                
+
                 <center>
+
                     <input type="hidden" id="Id" name="Id" value="<%= pes.getId_pessoa()%>">
 
                     <div class="form-group col-md-3">
                         <label for="Nome">Nome</label>
-                        <input type="text" class="form-control" id="Nome" name="Nome" aria-describedby="Nome" placeholder="Digite seu nome" required="">
+                        <input type="text" class="form-control" id="Nome" name="Nome" aria-describedby="Nome" placeholder="Digite seu nome" required="" value="<%= pes.getNome()%>">
                     </div>
 
                     <div class="form-group col-md-3">
                         <label for="CPF">CPF</label>
-                        <input type="text" class="form-control" id="CPF" name="CPF" aria-describedby="CPF" placeholder="Digite seu CPF" required="">
+                        <input type="text" class="form-control" id="CPF" name="CPF" aria-describedby="CPF" placeholder="Digite seu CPF" required="" value="<%= pes.getCpf()%>">
                     </div>
                     <br>
                     <button type="submit" class="btn btn-dark">Atualizar</button>
+
                 </center>
             </form>
         </div>
 
-        <script src="../js/bootstrap.bundle.min.js"></script>
+        <script src="js/bootstrap.bundle.min.js"></script>
 
     </body>
 </html>

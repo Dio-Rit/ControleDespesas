@@ -25,9 +25,9 @@
         </style>
 
         <!-- Bootstrap core CSS -->
-        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/bootstrap.min.css" rel="stylesheet">
 
-        <link href="../css/navbar.css" rel="stylesheet">
+        <link href="css/navbar.css" rel="stylesheet">
     </head>
     <body>
         <nav class="navbar navbar-expand-md navbar-dark bg-dark" aria-label="Fourth navbar example">
@@ -42,7 +42,7 @@
                         <ul class="navbar-nav mr-auto">
                         </ul>
 
-                        <form action="../DAOCategoria/ListarCategorias.jsp">
+                        <form action="DAOCategoria/ListarCategorias.jsp">
                             <button type="submit" class="btn btn-dark">Voltar</input>
                         </form>
 
@@ -52,21 +52,21 @@
         </nav>
 
         <div id="CadastroCategoria">
-            <form name="AcaoCategoria" id="Acaocategoria" method="post" action="../AcaoCategoria?param=SalvarCategoria">
-                
+            <form name="AcaoCategoria" id="Acaocategoria" method="post" action="AcaoCategoria?param=SalvarCategoria">
+
                 <% Categoria cat = (Categoria) request.getAttribute("objCategoria");%>
-                
+
                 <center>
                     <input type="hidden" id="Id" name="Id" value="<%= cat.getId_categoria()%>">
 
                     <div class="form-group col-md-3">
                         <label for="Nome">Nome</label>
-                        <input type="text" class="form-control" id="Nome" name="Nome" aria-describedby="Nome" placeholder="Digite o nome da categoria" required="">
+                        <input type="text" class="form-control" id="Nome" name="Nome" aria-describedby="Nome" placeholder="Digite o nome da categoria" required="" value="<%= cat.getNome()%>">
                     </div>
 
                     <div class="form-group col-md-3">
                         <label for="Descricao">Descrição</label>
-                        <input type="text" class="form-control" id="Login" name="Descricao" aria-describedby="Descricao" placeholder="Digite uma descrição" required="">
+                        <input type="text" class="form-control" id="Descricao" name="Descricao" aria-describedby="Descricao" placeholder="Digite uma descrição" required="" value="<%= cat.getDescricao()%>">
                     </div>
                     <br>
                     <button type="submit" class="btn btn-dark">Atualizar</button>
@@ -74,7 +74,7 @@
             </form>
         </div>
 
-        <script src="../js/bootstrap.bundle.min.js"></script>
+        <script src="js/bootstrap.bundle.min.js"></script>
 
     </body>
 </html>

@@ -64,28 +64,15 @@ public class AcaoUsuario extends HttpServlet {
 
         String param = request.getParameter("param");
 
-        if (param.equals("EditarUsuario")) {
-            Usuario u = new Usuario();
-            u.setId(Integer.parseInt(request.getParameter("id")));
-            u.setNome(request.getParameter("Nome"));
-            u.setLogin(request.getParameter("Login"));
-            u.setSenha(request.getParameter("Senha"));
-            u.setX("A");
-
-            UsuarioDAO a = new UsuarioDAO();
-            a.atualizar(u);
-            response.sendRedirect("/ControleDespesas/DAOUsuario/ListarUsuarios.jsp");
-
-        } else if (param.equals("EdUsuario")) {
+        if (param.equals("EdUsuario")) {
             String id = request.getParameter("id");
 
             Usuario usu = new UsuarioDAO().consultarId(Integer.parseInt(id));
 
             request.setAttribute("objUsuario", usu);
-            
-            System.out.println(usu.getNome());
-            
-            encaminharPagina("/ControleDespesas/DAOUsuario/AtualizaUsuario.jsp", request, response);
+            System.out.println(usu.getId());
+
+            encaminharPagina("/DAOUsuario/AtualizaUsuario.jsp", request, response);
 
         } else if (param.equals("ExcluirUsuario")) {
 
@@ -142,6 +129,25 @@ public class AcaoUsuario extends HttpServlet {
             UsuarioDAO c = new UsuarioDAO();
             c.salvar1(u);
             response.sendRedirect("/ControleDespesas/DAOUsuario/ListarUsuarios.jsp");
+
+        } else if (param.equals("EditarUsuario")) {
+
+            Usuario u = new Usuario();
+
+            System.out.println(request.getParameter("id"));
+            System.out.println(request.getParameter("Nome"));
+            System.out.println(request.getParameter("Login"));
+
+            u.setId(Integer.parseInt(request.getParameter("id")));
+            u.setNome(request.getParameter("Nome"));
+            u.setLogin(request.getParameter("Login"));
+            u.setSenha(request.getParameter("Senha"));
+            u.setX("A");
+
+            UsuarioDAO a = new UsuarioDAO();
+            a.atualizar(u);
+            response.sendRedirect("/ControleDespesas/DAOUsuario/ListarUsuarios.jsp");
+
         }
 
     }

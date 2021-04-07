@@ -63,18 +63,7 @@ public class AcaoPessoa extends HttpServlet {
 
         String param = request.getParameter("param");
 
-        if (param.equals("EditarPessoa")) {
-            Pessoa u = new Pessoa();
-            u.setId_pessoa(Integer.parseInt(request.getParameter("id_Pessoa")));
-            u.setNome(request.getParameter("Nome"));
-            u.setCpf(request.getParameter("CPF"));
-            u.setX("A");
-
-            PessoaDAO a = new PessoaDAO();
-            a.atualizar(u);
-            response.sendRedirect("/ControleDespesas/DAOPessoa/ListarPessoa.jsp");
-
-        } else if (param.equals("EdPessoa")) {
+        if (param.equals("EdPessoa")) {
             String id = request.getParameter("id");
 
             Pessoa pes = new PessoaDAO().consultarId(Integer.parseInt(id));
@@ -83,7 +72,7 @@ public class AcaoPessoa extends HttpServlet {
 
             System.out.println(pes.getNome());
 
-            encaminharPagina("/ControleDespesas/DAOPessoa/AtualizaPessoas.jsp", request, response);
+            encaminharPagina("/DAOPessoa/AtualizaPessoas.jsp", request, response);
 
         } else if (param.equals("ExcluirPessoa")) {
 
@@ -135,7 +124,20 @@ public class AcaoPessoa extends HttpServlet {
             PessoaDAO c = new PessoaDAO();
             c.salvar1(u);
             response.sendRedirect("/ControleDespesas/DAOPessoa/ListarPessoas.jsp");
+            
+        } else if (param.equals("EditarPessoa")) {
+            Pessoa u = new Pessoa();
+            u.setId_pessoa(Integer.parseInt(request.getParameter("id_Pessoa")));
+            u.setNome(request.getParameter("Nome"));
+            u.setCpf(request.getParameter("CPF"));
+            u.setX("A");
+
+            PessoaDAO a = new PessoaDAO();
+            a.atualizar(u);
+            response.sendRedirect("/ControleDespesas/DAOPessoa/ListarPessoa.jsp");
+
         }
+
     }
 
     private void encaminharPagina(String pagina, HttpServletRequest request, HttpServletResponse response) {

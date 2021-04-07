@@ -62,27 +62,16 @@ public class AcaoCategoria extends HttpServlet {
         // processRequest(request, response);
         String param = request.getParameter("param");
 
-        if (param.equals("EditarCategoria")) {
-            Categoria u = new Categoria();
-            u.setId_categoria(Integer.parseInt(request.getParameter("id")));
-            u.setNome(request.getParameter("Nome"));
-            u.setDescricao(request.getParameter("Descricao"));
-            u.setX("A");
-
-            CategoriaDAO a = new CategoriaDAO();
-            a.atualizar(u);
-            response.sendRedirect("/ControleDespesas/DAOCategoria/ListarCategorias.jsp");
-
-        } else if (param.equals("EdCategoria")) {
+        if (param.equals("EdCategoria")) {
             String id = request.getParameter("id");
 
             Categoria cat = new CategoriaDAO().consultarId(Integer.parseInt(id));
 
             request.setAttribute("objCategoria", cat);
-            
+
             System.out.println(cat.getNome());
 
-            encaminharPagina("/ControleDespesas/DAOCategoria/AtualizaCategorias.jsp", request, response);
+            encaminharPagina("/DAOCategoria/AtualizaCategorias.jsp", request, response);
 
         } else if (param.equals("ExcluirCategoria")) {
 
@@ -134,6 +123,18 @@ public class AcaoCategoria extends HttpServlet {
             CategoriaDAO c = new CategoriaDAO();
             c.salvar1(u);
             response.sendRedirect("/ControleDespesas/DAOCategoria/ListarCategorias.jsp");
+            
+        } else if (param.equals("EditarCategoria")) {
+            Categoria u = new Categoria();
+            u.setId_categoria(Integer.parseInt(request.getParameter("id")));
+            u.setNome(request.getParameter("Nome"));
+            u.setDescricao(request.getParameter("Descricao"));
+            u.setX("A");
+
+            CategoriaDAO a = new CategoriaDAO();
+            a.atualizar(u);
+            response.sendRedirect("/ControleDespesas/DAOCategoria/ListarCategorias.jsp");
+
         }
     }
 

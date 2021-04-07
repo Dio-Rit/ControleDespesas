@@ -95,7 +95,7 @@ public class UsuarioDAO implements IDAO_T<Usuario> {
                     + "SET nome = '" + o.getNome() + "', "
                     + "login = '" + o.getLogin() + "', "
                     + "senha = '" + o.getSenha() + "' "
-                    + "WHERE id = " + o.getId();
+                    + "WHERE id_usuario = " + o.getId();
 
             int resultado = st.executeUpdate(sql);
 
