@@ -75,22 +75,4 @@ public class TestGeral {
         assertEquals(true, x);
     }
 
-  /*  @Test
-    public void testaUltimoIdPessoa() {
-        lastPessoa = pd.ultimoID();
-        assertEquals(1, lastPessoa);
-    }
-
-    @Test
-    public void testaUltimoIdCategoria() {
-        lastCategoria = cd.ultimoID();
-        assertEquals(1, lastCategoria);
-    }
-
-    @Test
-    public void testaUltimoIdUsuario() {
-        lastUsuario = ud.ultimoID();
-        assertEquals(1, lastUsuario);
-    }*/
-
 }

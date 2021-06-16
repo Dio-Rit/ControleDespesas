@@ -1,0 +1,3 @@
+cd C:\Users\yNot\Desktop\Internet\ControleDespesas
+
+mvn liquibase:update
