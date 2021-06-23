@@ -1,4 +1,4 @@
-url: jdbc:postgresql://localhost:5432/ControleDespesas
+url: jdbc:postgresql://localhost:5432/controledespesas
 username: postgres
 password: postgres
 driver: org.postgresql.Driver
