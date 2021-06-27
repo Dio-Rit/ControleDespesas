@@ -8,7 +8,9 @@ package Apoio;
  *
  * @author fabricio.pretto
  */
+import java.io.FileInputStream;
 import java.sql.*;
+import java.util.Properties;
 
 public class ConexaoBD {
 
@@ -17,10 +19,12 @@ public class ConexaoBD {
 
     public ConexaoBD() {
         try {
-            String dbdriver = "org.postgresql.Driver";
-            String dburl = "jdbc:postgresql://localhost:5432/controledespesas";
-            String dbuser = "postgres";
-            String dbsenha = "postgres";
+            Properties prop = new Properties();
+            prop.load(new FileInputStream("db.properties"));
+            String dbdriver = prop.getProperty("db.driver");
+            String dburl = prop.getProperty("db.url");
+            String dbuser = prop.getProperty("db.user");
+            String dbsenha = prop.getProperty("db.senha");
 
             // Carrega Driver do Banco de Dados
             Class.forName(dbdriver);
