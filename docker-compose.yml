@@ -1,7 +1,7 @@
 version: "3.7"
 services:
   backend:
-   # containername: app-dev
+    container_name: app-dev
     image: app:build
     build:
       context: .
@@ -19,4 +19,4 @@ services:
  #- DATABASE_PASSWD=postgres
 
 networks:
- dev_net:
+  dev_net:
