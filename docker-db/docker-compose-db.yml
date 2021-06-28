@@ -1,7 +1,7 @@
 version: "3.7"
 services:
   db:
-    container_name: db-devBanco
+    container_name: db-dev
     image: postgres:9.6
     ports:
       - 5432:5432
