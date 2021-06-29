@@ -8,3 +8,11 @@ CREATE TABLE IF NOT EXISTS tipo1 (
 );
 --rollback DROP TABLE tipo1;
 
+--changeset dionatan:2
+CREATE TABLE IF NOT EXISTS tipo2 (
+ 	id SERIAL NOT NULL,
+	descricao VARCHAR(100) NOT NULL,
+	PRIMARY KEY (id)
+);
+--rollback DROP TABLE tipo2;
+
