@@ -9,6 +9,7 @@ package Apoio;
  * @author fabricio.pretto
  */
 import java.io.FileInputStream;
+import java.io.InputStream;
 import java.sql.*;
 import java.util.Properties;
 
@@ -20,7 +21,8 @@ public class ConexaoBD {
     public ConexaoBD() {
         try {
             Properties prop = new Properties();
-            prop.load(new FileInputStream("db.properties"));
+            InputStream input = ConexaoBD.class.getClassLoader().getResourceAsStream("db.properties");
+            prop.load(input);
             String dbdriver = prop.getProperty("db.driver");
             String dburl = prop.getProperty("db.url");
             String dbuser = prop.getProperty("db.user");
