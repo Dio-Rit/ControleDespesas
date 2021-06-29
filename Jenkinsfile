@@ -4,11 +4,6 @@ pipeline{
     }
     agent any
     stages {
-	    stage ('Build teste'){
-            steps{
-				sh 'docker-compose -f docker-compose-db.yml up --build --force-recreate -d'
-            }
-        }
         stage ('Build App - Homologação'){
             steps{
 				sh 'cp Dev/db.properties src/main/resources/db.properties'
