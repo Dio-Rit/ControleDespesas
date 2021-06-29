@@ -59,7 +59,7 @@
                 
                 <img class="mb-4" src="img/login.png" alt="" width="150">
                 
-                <h2>Controle</h2>
+                <h2>Controle de Despesas</h2>
                 <br>
                 
                 <label for="nome" class="visually-hidden">Email address</label>
