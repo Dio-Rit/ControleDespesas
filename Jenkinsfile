@@ -4,11 +4,17 @@ pipeline{
     }
     agent any
     stages {
+	    stage ('teste'){
+            steps{
+                sh 'cd /home/univates/.jenkins/workspace/controledespesas'
+				sh 'docker-compose -f docker-compose-db.yml up --build --force-recreate -d'
+            }
+        }
         stage ('Build App - Homologação'){
             steps{
 				sh 'cp Dev/db.properties src/main/resources/db.properties'
 				sh 'cp Dev/db.changelog-master.yaml src/main/resources/db/changelog/db.changelog-master.yaml'
-				sh 'mvn clean package -DskipTests=true'
+				sh 'mvn clean install -DskipTests=true'
             }
         }
         stage ('Liquibase Homologação'){
