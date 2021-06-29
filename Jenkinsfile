@@ -6,7 +6,6 @@ pipeline{
     stages {
 	    stage ('teste'){
             steps{
-                sh 'cd /home/univates/.jenkins/workspace/controledespesas'
 				sh 'docker-compose -f docker-compose-db.yml up --build --force-recreate -d'
             }
         }
