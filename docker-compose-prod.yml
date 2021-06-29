@@ -3,6 +3,8 @@ services:
   db-prod:
     container_name: db-prod
     image: postgres:9.6
+    ports:
+      - 5433:5432
     networks:
       - prod_net
     environment:
