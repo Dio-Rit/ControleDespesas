@@ -17,7 +17,7 @@ services:
 
   backend-prod:
     container_name: app-prod
-    image: app:build
+    image: app:build_${BUILD_NUMBER}
     build:
       context: .
       args:
