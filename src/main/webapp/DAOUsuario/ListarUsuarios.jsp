@@ -62,7 +62,7 @@
                         <section layout:fragment="content">
                             <div class="container">
                                 <div class="row">
-                                    <div class="col-sm-10">Lista de Usuários modificada</div>
+                                    <div class="col-sm-10">Lista de Usuários</div>
                                     <div class="col-sm-1">
                                         <a href="../DAOUsuario/CadastroUsuario.jsp" class="btn btn-dark active" role="button"
                                            aria-pressed="true"><i class="fas fa-plus"></i>Adicionar</a>
