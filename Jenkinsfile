@@ -8,7 +8,7 @@ pipeline{
             steps{
 				sh 'cp Dev/db.properties src/main/resources/db.properties'
 				sh 'cp Dev/db.changelog-master.yaml src/main/resources/db/changelog/db.changelog-master.yaml'
-				sh 'mvn clean install -DskipTests=true'
+				sh 'mvn clean package -DskipTests=true'
             }
         }
         stage ('Liquibase Homologação'){
