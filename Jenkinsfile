@@ -37,12 +37,12 @@ pipeline{
 				sh 'mvn clean install -DskipTests=true'
             }
         }
-	stage ('Deploy App - Production') {
+		stage ('Deploy App - Production') {
             steps {
 				sh 'docker-compose -f docker-compose-prod.yml up --build --force-recreate -d'
             }
         }
-	stage ('Liquibase Production'){
+		stage ('Liquibase Production'){
             steps{
                 sh 'mvn liquibase:update'
             }
