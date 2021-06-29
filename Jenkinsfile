@@ -16,11 +16,6 @@ pipeline{
                 sh 'mvn liquibase:update'
             }
         }
-        stage ('Unit Tests') {
-            steps {
-                sh 'mvn test'
-            }
-        }
         stage ('Deploy App - Homologação') {
             steps {
                 sh 'docker-compose up --build --force-recreate -d'
