@@ -32,3 +32,10 @@ CREATE TABLE IF NOT EXISTS tipo4 (
 );
 --rollback DROP TABLE tipo4;
 
+--changeset dionatan:5
+CREATE TABLE IF NOT EXISTS tipo5 (
+ 	id SERIAL NOT NULL,
+	descricao VARCHAR(100) NOT NULL,
+	PRIMARY KEY (id)
+);
+--rollback DROP TABLE tipo5;
