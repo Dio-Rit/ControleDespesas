@@ -72,13 +72,13 @@ public class AcaoUsuario extends HttpServlet {
             request.setAttribute("objUsuario", usu);
             System.out.println(usu.getId());
 
-            encaminharPagina("/DAOUsuario/AtualizaUsuario.jsp", request, response);
+            encaminharPagina("../DAOUsuario/AtualizaUsuario.jsp", request, response);
 
         } else if (param.equals("ExcluirUsuario")) {
 
             UsuarioDAO b = new UsuarioDAO();
             b.excluir1(Integer.parseInt(request.getParameter("id")));
-            response.sendRedirect("/DAOUsuario/ListarUsuarios.jsp");
+            response.sendRedirect("../DAOUsuario/ListarUsuarios.jsp");
 
         } else if (param.equals("ListarUsuario")) {
             int id = Integer.parseInt(request.getParameter("id"));
@@ -94,7 +94,7 @@ public class AcaoUsuario extends HttpServlet {
             tl.setSenha(senha);
             tl.setX(status);
 
-            response.sendRedirect("/DAOUsuario/ListarUsuarios.jsp");
+            response.sendRedirect("../DAOUsuario/ListarUsuarios.jsp");
 
         }
 
@@ -128,7 +128,7 @@ public class AcaoUsuario extends HttpServlet {
 
             UsuarioDAO c = new UsuarioDAO();
             c.salvar1(u);
-            response.sendRedirect("/DAOUsuario/ListarUsuarios.jsp");
+            response.sendRedirect("../DAOUsuario/ListarUsuarios.jsp");
 
         } else if (param.equals("EditarUsuario")) {
 
@@ -146,7 +146,7 @@ public class AcaoUsuario extends HttpServlet {
 
             UsuarioDAO a = new UsuarioDAO();
             a.atualizar(u);
-            response.sendRedirect("/DAOUsuario/ListarUsuarios.jsp");
+            response.sendRedirect("../DAOUsuario/ListarUsuarios.jsp");
 
         }
 
